@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NL Concert Watch</title>
+<style>
+  :root { --gold: #c9a96e; --border: #222; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #000; color: #fff;
+    font-family: Georgia, 'Times New Roman', serif;
+    min-height: 100vh;
+  }
+  header {
+    text-align: center;
+    padding: 90px 20px 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .h-name {
+    font-size: clamp(1.8rem, 6.5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    line-height: 1;
+    text-indent: .35em;
+  }
+  .h-rule { width: 48px; height: 1px; background: var(--gold); margin: 28px auto 20px; }
+  .h-sub {
+    font-size: .75rem; letter-spacing: .4em; text-transform: uppercase;
+    color: #777; font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 64px 28px 120px; }
+  .meta {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: .78rem; color: #666; text-align: center; margin-bottom: 64px;
+    letter-spacing: .05em;
+  }
+  .artist-block { margin-bottom: 52px; }
+  .artist-name {
+    font-size: 1.5rem; letter-spacing: .08em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px; margin-bottom: 18px;
+  }
+  .show {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px; padding: 10px 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .show + .show { border-top: 1px solid #151515; }
+  .show-date { color: var(--gold); font-size: .85rem; white-space: nowrap; min-width: 88px; }
+  .show-venue { flex: 1; font-size: .92rem; color: #ddd; }
+  .show-venue a { color: #ddd; text-decoration: none; border-bottom: 1px dotted #555; }
+  .show-venue a:hover { color: var(--gold); border-color: var(--gold); }
+  .empty { text-align: center; color: #555; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 60px 0; }
+  footer {
+    text-align: center; padding: 40px 20px 60px; color: #444;
+    font-family: 'Helvetica Neue', Arial, sans-serif; font-size: .72rem;
+    letter-spacing: .1em; border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="h-name">NL Concert Watch</div>
+    <div class="h-rule"></div>
+    <div class="h-sub">Wie er wanneer speelt in Nederland</div>
+  </header>
+  <main>
+    <div class="meta" id="meta"></div>
+    <div id="list"></div>
+  </main>
+  <footer>Automatisch bijgewerkt — elke maandagnacht</footer>
+
+  <script>
+    fetch('concert-watch-state.json?_=' + Date.now())
+      .then(r => r.json())
+      .then(render)
+      .catch(() => {
+        document.getElementById('list').innerHTML = '<div class="empty">Kon de data niet laden.</div>';
+      });
+
+    function render(data) {
+      const today = new Date().toISOString().slice(0, 10);
+      const upcoming = (data.known_shows || []).filter(s => s.date >= today);
+
+      const byArtist = {};
+      for (const show of upcoming) {
+        (byArtist[show.artist] ||= []).push(show);
+      }
+      for (const artist in byArtist) {
+        byArtist[artist].sort((a, b) => a.date.localeCompare(b.date));
+      }
+
+      const artists = Object.keys(byArtist).sort((a, b) => a.localeCompare(b));
+
+      const metaEl = document.getElementById('meta');
+      const lastRun = data.last_run ? new Date(data.last_run).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' }) : 'onbekend';
+      metaEl.textContent = `${upcoming.length} aankomende optreden(s) · laatst gecontroleerd op ${lastRun}`;
+
+      const listEl = document.getElementById('list');
+      if (artists.length === 0) {
+        listEl.innerHTML = '<div class="empty">Nog geen aankomende optredens gevonden.</div>';
+        return;
+      }
+
+      listEl.innerHTML = artists.map(artist => {
+        const shows = byArtist[artist].map(s => {
+          const d = new Date(s.date).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' });
+          const venue = s.source_url
+            ? `<a href="${s.source_url}" target="_blank" rel="noopener">${s.venue_or_city}</a>`
+            : s.venue_or_city;
+          return `<div class="show"><span class="show-date">${d}</span><span class="show-venue">${venue}</span></div>`;
+        }).join('');
+        return `<div class="artist-block"><div class="artist-name">${artist}</div>${shows}</div>`;
+      }).join('');
+    }
+  </script>
+</body>
+</html>
