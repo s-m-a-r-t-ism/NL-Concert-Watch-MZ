@@ -12,7 +12,7 @@ Deze GitHub-repo bevat alleen de data, niet de scheduled task zelf — die staat
 
 Maak in Claude Code (of de Claude-app) een scheduled task aan met:
 
-- **Schema:** elke maandagnacht 03:00 (nacht van zondag op maandag) — cron `0 3 * * 1`
+- **Schema:** elke zondagavond 21:00 — cron `0 21 * * 0`
 - **Prompt:** zie `scheduled-task-prompt.md` in deze repo — kopieer de inhoud 1-op-1 als prompt voor de nieuwe scheduled task. Pas het pad naar `concert-watch-state.json` aan als de repo op een andere locatie staat dan `C:\Users\mzijp\MZ_Code\Allerlei\`.
 
 ## Rapportage
