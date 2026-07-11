@@ -51,7 +51,8 @@
     { "artist": "Nick Cave and the Bad Seeds", "date": "2026-09-26", "venue_or_city": "Ziggo Dome, Amsterdam", "source_url": "https://ziggodome.nl/en/events/fd80dc07-fab3-4dff-9f08-47fdfb921324/" },
     { "artist": "Nick Cave and the Bad Seeds", "date": "2026-09-27", "venue_or_city": "Ziggo Dome, Amsterdam", "source_url": "https://www.ziggodome.nl/en/event/6861462562/nick-cave-the-bad-seeds/" },
     { "artist": "Weval", "date": "2026-03-21", "venue_or_city": "PAARD, Den Haag", "source_url": "https://www.paard.nl/en/event/weval-2/" },
-    { "artist": "Weval", "date": "2026-03-26", "venue_or_city": "013 Poppodium, Tilburg", "source_url": "https://www.013.nl/en/events/117151/weval" }
+    { "artist": "Weval", "date": "2026-03-26", "venue_or_city": "013 Poppodium, Tilburg", "source_url": "https://www.013.nl/en/events/117151/weval" },
+    { "artist": "Hang Youth", "date": "2026-06-20", "venue_or_city": "Pinkpop Festival, Landgraaf", "source_url": "https://www.pinkpop.nl/en/line-up/hang-youth/" }
   ],
-  "last_run": "2026-07-07T12:00:00+02:00"
+  "last_run": "2026-07-11T22:39:00+02:00"
 }
