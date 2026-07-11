@@ -53,6 +53,12 @@
   .show-venue { flex: 1; font-size: .92rem; color: #ddd; }
   .show-venue a { color: #ddd; text-decoration: none; border-bottom: 1px dotted #555; }
   .show-venue a:hover { color: var(--gold); border-color: var(--gold); }
+  .ts-btn {
+    flex-shrink: 0; font-size: .68rem; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--gold); border: 1px solid var(--gold); border-radius: 3px;
+    padding: 4px 9px; text-decoration: none; white-space: nowrap;
+  }
+  .ts-btn:hover { background: var(--gold); color: #000; }
   .empty { text-align: center; color: #555; font-family: 'Helvetica Neue', Arial, sans-serif; padding: 60px 0; }
   footer {
     text-align: center; padding: 40px 20px 60px; color: #444;
@@ -110,7 +116,10 @@
           const venue = s.source_url
             ? `<a href="${s.source_url}" target="_blank" rel="noopener">${s.venue_or_city}</a>`
             : s.venue_or_city;
-          return `<div class="show"><span class="show-date">${d}</span><span class="show-venue">${venue}</span></div>`;
+          const tsBtn = s.ticketswap_url
+            ? `<a class="ts-btn" href="${s.ticketswap_url}" target="_blank" rel="noopener">TicketSwap</a>`
+            : '';
+          return `<div class="show"><span class="show-date">${d}</span><span class="show-venue">${venue}</span>${tsBtn}</div>`;
         }).join('');
         return `<div class="artist-block"><div class="artist-name">${artist}</div>${shows}</div>`;
       }).join('');

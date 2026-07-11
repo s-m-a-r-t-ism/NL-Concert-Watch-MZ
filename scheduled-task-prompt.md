@@ -3,7 +3,7 @@ Je controleert of er nieuwe concert- of festivaloptredens in Nederland zijn aang
 STAP 1 — Lees de trackingstate:
 Lees het bestand C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json. Dit bevat:
 - "artists": de lijst met artiesten om te volgen, ALFABETISCH gesorteerd — houd deze volgorde aan als je de lijst afwerkt en rapporteert, zodat de gebruiker de voortgang kan volgen
-- "known_shows": een lijst van eerder gevonden/gerapporteerde optredens (elk met minstens artist, date, venue_or_city, source_url)
+- "known_shows": een lijst van eerder gevonden/gerapporteerde optredens (elk met minstens artist, date, venue_or_city, source_url, en optioneel ticketswap_url)
 - "last_run": tijdstip van de vorige run (kan null zijn bij de eerste run)
 
 STAP 2 — Zoek nieuwe optredens (HEEL Nederland, alle soorten locaties):
@@ -12,18 +12,21 @@ Gebruik WebSearch om voor elke artiest in de lijst (in alfabetische volgorde) te
 STAP 3 — Bepaal wat nieuw is:
 Vergelijk elke gevonden show met "known_shows" (op basis van artiest + datum + venue). Alles wat niet al in known_shows staat, is "nieuw". Bij de allereerste run (last_run is null) is de hele gevonden lijst per definitie "nieuw" — rapporteer die volledig als startpunt, dat is geen fout.
 
-STAP 4 — Rapporteer aan de gebruiker:
+STAP 4 — Zoek de TicketSwap-link voor elk nieuw gevonden optreden:
+Zoek voor elk NIEUW optreden (uit STAP 3) ook de bijbehorende TicketSwap-eventpagina op (bijv. via WebSearch met "<artiest> <venue> <datum> ticketswap" of site:ticketswap.nl), en noteer die URL als "ticketswap_url". TicketSwap-eventpagina's bestaan niet voor elk optreden (met name kleine/net aangekondigde/alternatieve locaties hebben er vaak nog geen) — als je geen exacte match vindt voor de juiste artiest/venue/datum, laat "ticketswap_url" dan gewoon weg bij die show in plaats van te gokken of een verkeerde/algemene link te gebruiken.
+
+STAP 5 — Rapporteer aan de gebruiker:
 Stuur ALTIJD een kort chatbericht naar de gebruiker (dit is de enige afgesproken manier van rapporteren — GEEN e-mail versturen, geen Gmail-concepten aanmaken):
-- Als er nieuwe optredens zijn: noem per nieuw optreden de artiest, datum, venue/stad, en de bron-URL. Groepeer alfabetisch op artiest, zodat duidelijk is hoever de lijst is doorlopen.
+- Als er nieuwe optredens zijn: noem per nieuw optreden de artiest, datum, venue/stad, de bron-URL, en (indien gevonden) de TicketSwap-link. Groepeer alfabetisch op artiest, zodat duidelijk is hoever de lijst is doorlopen.
 - Als er niets nieuws is: stuur alleen een kort berichtje zoals "Geen nieuwe optredens deze week voor je gevolgde artiesten." (herhaal niet de volledige lijst van bekende shows).
 
-STAP 5 — Werk de state bij:
+STAP 6 — Werk de state bij:
 Schrijf C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json opnieuw weg met:
 - dezelfde "artists" lijst, alfabetisch gesorteerd (tenzij de gebruiker later een update geeft)
-- "known_shows" aangevuld met alle nieuw gevonden shows (verwijder geen oude shows, ook niet als het optreden al is geweest — dat voorkomt dubbele meldingen)
+- "known_shows" aangevuld met alle nieuw gevonden shows, elk met artist, date, venue_or_city, source_url, en ticketswap_url indien gevonden in STAP 4 (verwijder geen oude shows, ook niet als het optreden al is geweest — dat voorkomt dubbele meldingen)
 - "last_run" op de huidige datum/tijd
 
-STAP 6 — Publiceer de bijgewerkte state naar GitHub:
+STAP 7 — Publiceer de bijgewerkte state naar GitHub:
 Commit en push het bijgewerkte concert-watch-state.json naar de GitHub-repo (https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git), zodat de website concerts.smartism.art (gehost via GitHub Pages vanuit deze repo) automatisch up-to-date blijft. Deze routine draait op meerdere machines (werk en privé) tegen dezelfde repo — dat is de bedoeling, dus haal eerst de laatste stand op om conflicten te voorkomen. Voer uit vanuit C:\Users\mzijp\MZ_Code\Allerlei:
 - git add concert-watch-state.json
 - git commit -m "Update concert-watch-state.json - <datum van vandaag>" (sla deze stap over als er niets gewijzigd is)
