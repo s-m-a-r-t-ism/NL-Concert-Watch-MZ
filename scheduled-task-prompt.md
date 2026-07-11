@@ -23,6 +23,13 @@ Schrijf C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json opnieuw weg met
 - "known_shows" aangevuld met alle nieuw gevonden shows (verwijder geen oude shows, ook niet als het optreden al is geweest — dat voorkomt dubbele meldingen)
 - "last_run" op de huidige datum/tijd
 
+STAP 6 — Publiceer de bijgewerkte state naar GitHub:
+Commit en push het bijgewerkte concert-watch-state.json naar de GitHub-repo (https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git), zodat de website concerts.smartism.art (gehost via GitHub Pages vanuit deze repo) automatisch up-to-date blijft. Deze routine draait op meerdere machines (werk en privé) tegen dezelfde repo — dat is de bedoeling, dus haal eerst de laatste stand op om conflicten te voorkomen. Voer uit vanuit C:\Users\mzijp\MZ_Code\Allerlei:
+- git add concert-watch-state.json
+- git commit -m "Update concert-watch-state.json - <datum van vandaag>" (sla deze stap over als er niets gewijzigd is)
+- git pull --rebase origin main
+- git push origin main
+
 Artiestenlijst (55 stuks, alfabetisch): Aphex Twin, Arcade Fire, Arctic Monkeys, Big Thief, Billie Eilish, Blood Red Shoes, Blur, Bob Dylan, Bombay Bicycle Club, Bon Iver, Brian Eno, Bryan Ferry, Car Seat Headrest, Daniela Pes, David Byrne, Depeche Mode, Editors, Feist, Goldband, Hang Youth, HMLTD, IDLES, Insecure Men, Interpol, Jamie XX, Joan Baez, Joni Mitchell, Kate Bush, Lana del Rey, LCD Soundsystem, Lisa O'Neill, Mumford & Sons, Muse, Nick Cave and the Bad Seeds, Nicolas Jaar, Nine Inch Nails, Oasis, Paul McCartney, PJ Harvey, Portishead, Queens of the Stone Age, Radiohead, Roxy Music, Son Lux, Talk Talk, Talking Heads, The Cure, The National, The Psychotic Monks, The Smiths, The Strokes, Tom Waits, TVAM, Weval, Yeah Yeah Yeahs, Young Fathers.
 
 Belangrijk: verstuur GEEN e-mails en maak geen Gmail-concepten — de gebruiker heeft expliciet gekozen voor alleen een chatbericht in Claude. Een eventuele losse website voor deze meldingen komt later, nu nog niet bouwen.
