@@ -57,7 +57,7 @@
     { "artist": "Nicolas Jaar", "date": "2026-07-30", "venue_or_city": "Melkweg, Amsterdam (als DARKSIDE, Dekmantel Festival 'Into the City')", "source_url": "https://www.melkweg.nl/en/agenda/dekmantel-festival-darkside-headache-juan-atkins-pres-infiniti-new-york-ea-30-07-2026/" },
     { "artist": "Weval", "date": "2026-10-02", "venue_or_city": "Patronaat, Haarlem (Haarlem Vinyl Festival, met Ineffekt + Nebula)", "source_url": "https://patronaat.nl/event/weval-support-haarlem-vinyl-festival-02-10-26/" },
     { "artist": "Madra Salach", "date": "2026-06-13", "venue_or_city": "Best Kept Secret Festival, Hilvarenbeek", "source_url": "https://www.bestkeptsecret.nl/bands/madra-salach" },
-    { "artist": "Madra Salach", "date": "2026-09-19", "venue_or_city": "EKKO, Utrecht (uitverkocht)", "source_url": "https://ekko.nl/en/upcoming/" },
+    { "artist": "Madra Salach", "date": "2026-09-19", "venue_or_city": "EKKO, Utrecht", "source_url": "https://ekko.nl/en/upcoming/" },
     { "artist": "Madra Salach", "date": "2026-08-27 to 2026-08-30 (exacte dag niet bevestigd; festival loopt 27 t/m 30 augustus 2026)", "venue_or_city": "Into The Great Wide Open, Vlieland", "source_url": "https://intothegreatwideopen.nl/en/programma/madra-salach" }
   ],
   "last_run": "2026-07-20T18:30:00+02:00"
