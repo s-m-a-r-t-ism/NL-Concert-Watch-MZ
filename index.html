@@ -120,8 +120,8 @@
         if (!y2) return new Date(dateStr).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' });
         const sameMonth = mo1 === mo2 && y1 === y2;
         return sameMonth
-          ? `${parseInt(d1, 10)}-${parseInt(d2, 10)} ${MONTHS_NL[parseInt(mo1, 10) - 1]}`
-          : `${parseInt(d1, 10)} ${MONTHS_NL[parseInt(mo1, 10) - 1]} - ${parseInt(d2, 10)} ${MONTHS_NL[parseInt(mo2, 10) - 1]}`;
+          ? `${parseInt(d1, 10)}-${parseInt(d2, 10)} ${MONTHS_NL[parseInt(mo1, 10) - 1]} ${y1}`
+          : `${parseInt(d1, 10)} ${MONTHS_NL[parseInt(mo1, 10) - 1]} - ${parseInt(d2, 10)} ${MONTHS_NL[parseInt(mo2, 10) - 1]} ${y2}`;
       }
 
       listEl.innerHTML = artists.map(artist => {
