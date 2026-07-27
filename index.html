@@ -201,12 +201,13 @@
       listEl.style.paddingLeft = '';
     }
 
-    // Lines up the venue text of every row with the left edge of the (centered)
-    // meta line above it. Both texts change length week to week, so this is
-    // recomputed from actual measurements rather than a fixed pixel value —
-    // see main = 2*(neededContent + PADDING) - metaWidth, derived from the
-    // fact that the centered meta text's midpoint always sits at the page
-    // center regardless of main's width.
+    // Lines up the ARTIST NAME (start of .show-venue, after the date column)
+    // with the left edge of the centered meta line above it. Both texts change
+    // length week to week, so this is recomputed from actual measurements
+    // rather than a fixed pixel value — it relies on the fact that the
+    // centered meta text's midpoint always sits at the page center regardless
+    // of main's width, so main's width is the only free variable needed to
+    // solve for both the correct indent and enough room to avoid wrapping.
     function alignTimeline(metaEl, listEl) {
       const main = document.querySelector('main');
       resetTimelineAlignment(listEl);
@@ -219,10 +220,10 @@
       const venues = Array.from(listEl.querySelectorAll('.show-venue'));
       const maxVenueWidth = venues.reduce((max, v) => Math.max(max, measureNaturalWidth(v)), 0);
 
-      const neededContent = DATE_COL + GAP + maxVenueWidth + BUFFER;
-      const minMW = 2 * (neededContent + PADDING) - metaWidth;
+      const neededVenue = maxVenueWidth + BUFFER;
+      const minMW = 2 * (neededVenue + PADDING) - metaWidth;
       const mw = Math.max(BASE_MW, minMW);
-      const indent = Math.max(0, mw / 2 - PADDING - metaWidth / 2);
+      const indent = Math.max(0, mw / 2 - PADDING - metaWidth / 2 - DATE_COL - GAP);
 
       main.style.maxWidth = mw + 'px';
       listEl.style.paddingLeft = indent + 'px';
