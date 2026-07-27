@@ -106,6 +106,12 @@
         document.getElementById('list').innerHTML = '<div class="empty">Kon de data niet laden.</div>';
       });
 
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { if (currentData) render(currentData); }, 150);
+    });
+
     function setSort(mode) {
       sortMode = mode;
       document.getElementById('btn-alpha').classList.toggle('active', mode === 'alpha');
@@ -173,6 +179,53 @@
       }
 
       listEl.innerHTML = sortMode === 'date' ? renderTimeline(upcoming) : renderAlpha(upcoming);
+
+      if (sortMode === 'date') alignTimeline(metaEl, listEl);
+      else resetTimelineAlignment(listEl);
+    }
+
+    function measureNaturalWidth(el) {
+      const clone = el.cloneNode(true);
+      clone.style.position = 'absolute';
+      clone.style.visibility = 'hidden';
+      clone.style.whiteSpace = 'nowrap';
+      clone.style.width = 'auto';
+      document.body.appendChild(clone);
+      const width = clone.getBoundingClientRect().width;
+      document.body.removeChild(clone);
+      return width;
+    }
+
+    function resetTimelineAlignment(listEl) {
+      document.querySelector('main').style.maxWidth = '';
+      listEl.style.paddingLeft = '';
+    }
+
+    // Lines up the venue text of every row with the left edge of the (centered)
+    // meta line above it. Both texts change length week to week, so this is
+    // recomputed from actual measurements rather than a fixed pixel value —
+    // see main = 2*(neededContent + PADDING) - metaWidth, derived from the
+    // fact that the centered meta text's midpoint always sits at the page
+    // center regardless of main's width.
+    function alignTimeline(metaEl, listEl) {
+      const main = document.querySelector('main');
+      resetTimelineAlignment(listEl);
+
+      const BASE_MW = 900, PADDING = 28, DATE_COL = 136, GAP = 16, BUFFER = 12;
+
+      if (window.innerWidth < BASE_MW + 80) return; // too narrow to bother — plain layout is fine here
+
+      const metaWidth = measureNaturalWidth(metaEl);
+      const venues = Array.from(listEl.querySelectorAll('.show-venue'));
+      const maxVenueWidth = venues.reduce((max, v) => Math.max(max, measureNaturalWidth(v)), 0);
+
+      const neededContent = DATE_COL + GAP + maxVenueWidth + BUFFER;
+      const minMW = 2 * (neededContent + PADDING) - metaWidth;
+      const mw = Math.max(BASE_MW, minMW);
+      const indent = Math.max(0, mw / 2 - PADDING - metaWidth / 2);
+
+      main.style.maxWidth = mw + 'px';
+      listEl.style.paddingLeft = indent + 'px';
     }
   </script>
 </body>
