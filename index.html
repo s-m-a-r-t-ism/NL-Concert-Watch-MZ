@@ -45,6 +45,7 @@
   .sort-btn:hover { background: rgba(201, 169, 110, .15); }
   .sort-btn.active { background: var(--gold); color: #000; }
   main { max-width: 900px; margin: 0 auto; padding: 64px 28px 120px; }
+  #list { max-width: 100%; }
   .meta {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: .78rem; color: #666; text-align: center; margin-bottom: 64px;
@@ -179,9 +180,7 @@
       }
 
       listEl.innerHTML = sortMode === 'date' ? renderTimeline(upcoming) : renderAlpha(upcoming);
-
-      if (sortMode === 'date') alignTimeline(metaEl, listEl);
-      else resetTimelineAlignment(listEl);
+      layoutList(metaEl, listEl);
     }
 
     function measureNaturalWidth(el) {
@@ -196,37 +195,52 @@
       return width;
     }
 
-    function resetTimelineAlignment(listEl) {
-      document.querySelector('main').style.maxWidth = '';
-      listEl.style.paddingLeft = '';
-    }
-
-    // Lines up the ARTIST NAME (start of .show-venue, after the date column)
-    // with the left edge of the centered meta line above it. Both texts change
-    // length week to week, so this is recomputed from actual measurements
-    // rather than a fixed pixel value — it relies on the fact that the
-    // centered meta text's midpoint always sits at the page center regardless
-    // of main's width, so main's width is the only free variable needed to
-    // solve for both the correct indent and enough room to avoid wrapping.
-    function alignTimeline(metaEl, listEl) {
+    // Two things happen here, both recomputed from actual measurements
+    // (never fixed pixel values) since the meta text and show list both
+    // change length week to week:
+    //  1. #list is sized to hug its widest row (date + venue + TicketSwap
+    //     button) instead of stretching full-width, so the button sits right
+    //     after the text instead of drifting off to the container's edge —
+    //     in both A-Z and Timeline mode, at any viewport width.
+    //  2. In Timeline mode only, the artist name (start of .show-venue) is
+    //     also lined up with the left edge of the centered meta line above —
+    //     relies on the fact that centered text's midpoint always sits at the
+    //     page center regardless of main's width, so main's width is the only
+    //     free variable needed to solve for both the indent and enough room
+    //     to avoid wrapping.
+    function layoutList(metaEl, listEl) {
       const main = document.querySelector('main');
-      resetTimelineAlignment(listEl);
-
       const BASE_MW = 900, PADDING = 28, DATE_COL = 136, GAP = 16, BUFFER = 12;
 
-      if (window.innerWidth < BASE_MW + 80) return; // too narrow to bother — plain layout is fine here
+      const rows = Array.from(listEl.querySelectorAll('.show'));
 
-      const metaWidth = measureNaturalWidth(metaEl);
-      const venues = Array.from(listEl.querySelectorAll('.show-venue'));
-      const maxVenueWidth = venues.reduce((max, v) => Math.max(max, measureNaturalWidth(v)), 0);
+      // A-Z mode: let the TicketSwap button overlap half its own width over
+      // the end of the widest entry's text, instead of sitting a full gap
+      // after it (Timeline mode keeps the plain gap, by request).
+      const buttons = Array.from(listEl.querySelectorAll('.ts-btn'));
+      if (sortMode === 'alpha' && buttons.length) {
+        const btnWidth = measureNaturalWidth(buttons[0]);
+        const overlap = -(GAP + btnWidth / 2) + 'px';
+        buttons.forEach(btn => { btn.style.marginLeft = overlap; });
+      } else {
+        buttons.forEach(btn => { btn.style.marginLeft = ''; });
+      }
 
-      const neededVenue = maxVenueWidth + BUFFER;
-      const minMW = 2 * (neededVenue + PADDING) - metaWidth;
-      const mw = Math.max(BASE_MW, minMW);
-      const indent = Math.max(0, mw / 2 - PADDING - metaWidth / 2 - DATE_COL - GAP);
+      const maxRowWidth = rows.reduce((max, r) => Math.max(max, measureNaturalWidth(r)), 0);
 
-      main.style.maxWidth = mw + 'px';
-      listEl.style.paddingLeft = indent + 'px';
+      let indent = 0;
+      if (sortMode === 'date' && rows.length && window.innerWidth >= BASE_MW + 80) {
+        const metaWidth = measureNaturalWidth(metaEl);
+        const minMW = 2 * (maxRowWidth + BUFFER - DATE_COL - GAP + PADDING) - metaWidth;
+        const mw = Math.max(BASE_MW, minMW);
+        indent = Math.max(0, mw / 2 - PADDING - metaWidth / 2 - DATE_COL - GAP);
+        main.style.maxWidth = mw + 'px';
+      } else {
+        main.style.maxWidth = '';
+      }
+
+      listEl.style.paddingLeft = indent ? indent + 'px' : '';
+      listEl.style.width = rows.length ? (indent + maxRowWidth + BUFFER) + 'px' : '';
     }
   </script>
 </body>
