@@ -65,7 +65,8 @@
     { "artist": "Hang Youth", "date": "2026-07-25", "venue_or_city": "WeitjeRock Festival, IJzendijke", "source_url": "https://www.weitjerock.com/line-up/zaterdag/" },
     { "artist": "Hang Youth", "date": "2025-10-16 (reeds geweest; retroactief gevonden)", "venue_or_city": "Mezz, Breda", "source_url": "https://www.mezz.nl/programma/hang-youth-2/" },
     { "artist": "Lisa O'Neill", "date": "2026-11-03", "venue_or_city": "Merleyn, Nijmegen", "source_url": "https://www.doornroosje.nl/event/lisa-oneill/" },
-    { "artist": "Queens of the Stone Age", "date": "2025-10-26 (reeds geweest; retroactief gevonden)", "venue_or_city": "Koninklijk Theater Carré, Amsterdam (The Catacombs Tour)", "source_url": "https://carre.nl/voorstelling/queens-of-the-stone-age-the-catacombs-tour" }
+    { "artist": "Queens of the Stone Age", "date": "2025-10-26 (reeds geweest; retroactief gevonden)", "venue_or_city": "Koninklijk Theater Carré, Amsterdam (The Catacombs Tour)", "source_url": "https://carre.nl/voorstelling/queens-of-the-stone-age-the-catacombs-tour" },
+    { "artist": "Madra Salach", "date": "2026-08-05 (reeds geweest; retroactief gevonden)", "venue_or_city": "Openluchttheater De Goffert, Nijmegen (support voor Black Country, New Road)", "source_url": "https://www.doornroosje.nl/en/event/black-country-new-road/" }
   ],
-  "last_run": "2026-08-03T12:00:00+02:00"
+  "last_run": "2026-08-10T12:00:00+02:00"
 }
