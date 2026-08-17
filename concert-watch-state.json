@@ -66,7 +66,9 @@
     { "artist": "Hang Youth", "date": "2025-10-16 (reeds geweest; retroactief gevonden)", "venue_or_city": "Mezz, Breda", "source_url": "https://www.mezz.nl/programma/hang-youth-2/" },
     { "artist": "Lisa O'Neill", "date": "2026-11-03", "venue_or_city": "Merleyn, Nijmegen", "source_url": "https://www.doornroosje.nl/event/lisa-oneill/" },
     { "artist": "Queens of the Stone Age", "date": "2025-10-26 (reeds geweest; retroactief gevonden)", "venue_or_city": "Koninklijk Theater Carré, Amsterdam (The Catacombs Tour)", "source_url": "https://carre.nl/voorstelling/queens-of-the-stone-age-the-catacombs-tour" },
-    { "artist": "Madra Salach", "date": "2026-08-05 (reeds geweest; retroactief gevonden)", "venue_or_city": "Openluchttheater De Goffert, Nijmegen (support voor Black Country, New Road)", "source_url": "https://www.doornroosje.nl/en/event/black-country-new-road/" }
+    { "artist": "Madra Salach", "date": "2026-08-05 (reeds geweest; retroactief gevonden)", "venue_or_city": "Openluchttheater De Goffert, Nijmegen (support voor Black Country, New Road)", "source_url": "https://www.doornroosje.nl/en/event/black-country-new-road/" },
+    { "artist": "Goldband", "date": "2026-04-27 (reeds geweest; retroactief gevonden)", "venue_or_city": "Oranjebitter Festival, Roel Langerakpark, Rotterdam", "source_url": "https://oranjebitter-rotterdam.nl/", "ticketswap_url": "https://www.ticketswap.nl/festival-tickets/oranjebitter-festival-2026-rotterdam-roel-langerakpark-2026-04-27-CVM2xYrZa9GpvEmMDzxQb" },
+    { "artist": "Joan Baez", "date": "2026-06-07", "venue_or_city": "Koninklijk Theater Carré, Amsterdam (extra afscheidsshow, Farewell Forever Tour)", "source_url": "https://www.artiestennieuws.nl/88211/joan-baez-extra-show-carre" }
   ],
-  "last_run": "2026-08-10T12:00:00+02:00"
+  "last_run": "2026-08-17T00:00:00+02:00"
 }
