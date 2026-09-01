@@ -1,10 +1,18 @@
+---
+name: NL concert watch
+description: Wekelijkse check op nieuwe concert-aankondigingen in Nederland voor een vaste artiestenlijst
+---
+
 Je controleert of er nieuwe concert- of festivaloptredens in Nederland zijn aangekondigd voor een vaste lijst favoriete artiesten van de gebruiker.
 
-STAP 1 — Lees de trackingstate:
+STAP 1 — Lees de trackingstate en herken deze machine:
 Lees het bestand C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json. Dit bevat:
 - "artists": de lijst met artiesten om te volgen, ALFABETISCH gesorteerd — houd deze volgorde aan als je de lijst afwerkt en rapporteert, zodat de gebruiker de voortgang kan volgen
 - "known_shows": een lijst van eerder gevonden/gerapporteerde optredens (elk met minstens artist, date, venue_or_city, source_url, en optioneel ticketswap_url)
 - "last_run": tijdstip van de vorige run (kan null zijn bij de eerste run)
+- "last_run_by": naam van de machine die de vorige run deed (kan ontbreken bij oudere state)
+
+Lees ook C:\Users\mzijp\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt — dit bevat de vaste, door de gebruiker gekozen naam van DEZE machine (bijv. "WP-Fat Client"). Dit bestand is lokaal per machine (staat niet in de git repo), zodat elke geïnstalleerde machine zijn eigen naam heeft. Gebruik deze naam in STAP 6 en STAP 7. Als het bestand niet bestaat, vraag de gebruiker eenmalig hoe deze machine genoemd moet worden, maak het bestand aan met dat antwoord, en ga daarna verder.
 
 STAP 2 — Zoek nieuwe optredens (HEEL Nederland, alle soorten locaties):
 Gebruik WebSearch om voor elke artiest in de lijst (in alfabetische volgorde) te controleren op aangekondigde optredens in Nederland — concerten, clubshows, festivals, maar ook kleine, alternatieve, tijdelijke of ongebruikelijke locaties (bijv. kerken, industriële locaties, buitenpodia, kleine cafépodia, pop-up locaties, boerderijen, campings). Zoek dus NIET alleen naar de grote/bekende venues — de gebruiker wil juist ook de rare/originele/kleine plekken meekrijgen, niet alleen Ziggo Dome/Paradiso/Melkweg-achtige locaties. Gebruik brede zoektermen zoals "<artiest> Nederland 2026 tickets", "<artiest> concert Netherlands", "<artiest> Nederland optreden", site:songkick.com, site:eventim.nl, site:ticketmaster.nl, site:podiuminfo.nl, en algemene zoekopdrachten zonder venue-namen vooraf in te vullen, zodat ook onbekende/kleine podia naar boven komen. Zoek zonder tijdslimiet — ook shows die pas over een jaar of later plaatsvinden.
@@ -26,14 +34,17 @@ Zoek voor elk NIEUW optreden (uit STAP 4) ook de bijbehorende TicketSwap-eventpa
 
 STAP 6 — Rapporteer aan de gebruiker:
 Stuur ALTIJD een kort chatbericht naar de gebruiker (dit is de enige afgesproken manier van rapporteren — GEEN e-mail versturen, geen Gmail-concepten aanmaken):
+- Sluit af met een regel welke machine de run deed, bijv. "(Run door: WP-Fat Client)" — zo kan de gebruiker runs van verschillende pc's uit elkaar houden.
 - Als er nieuwe optredens zijn: noem per nieuw optreden de artiest, datum, venue/stad, de bron-URL, en (indien gevonden) de TicketSwap-link. Groepeer alfabetisch op artiest, zodat duidelijk is hoever de lijst is doorlopen.
-- Als er niets nieuws is: stuur alleen een kort berichtje zoals "Geen nieuwe optredens deze week voor je gevolgde artiesten." (herhaal niet de volledige lijst van bekende shows).
+- Als er niets nieuws is: stuur alleen een kort berichtje zoals "Geen nieuwe optredens deze week voor je gevolgde artiesten." (herhaal niet de volledige lijst van bekende shows) plus de "Run door: ..."-regel.
+- Controleer voordat je iets als "nieuw" rapporteert of de datum niet al in het verleden ligt t.o.v. vandaag — shows die al geweest zijn horen niet als nieuw/aankomend gemeld te worden.
 
 STAP 7 — Werk de state bij:
 Schrijf C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json opnieuw weg met:
 - dezelfde "artists" lijst, alfabetisch gesorteerd (tenzij de gebruiker later een update geeft)
 - "known_shows" aangevuld met alle nieuw gevonden shows, elk met artist, date, venue_or_city, source_url, en ticketswap_url indien gevonden in STAP 5 (verwijder geen oude shows, ook niet als het optreden al is geweest — dat voorkomt dubbele meldingen)
 - "last_run" op de huidige datum/tijd
+- "last_run_by" op de machinenaam uit machine-name.txt (zie STAP 1)
 
 STAP 8 — Publiceer de bijgewerkte state naar GitHub:
 Commit en push het bijgewerkte concert-watch-state.json naar de GitHub-repo (https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git), zodat de website concerts.smartism.art (gehost via GitHub Pages vanuit deze repo) automatisch up-to-date blijft. Deze routine draait op meerdere machines (werk en privé) tegen dezelfde repo — dat is de bedoeling, dus haal eerst de laatste stand op om conflicten te voorkomen. Voer uit vanuit C:\Users\mzijp\MZ_Code\Allerlei:
@@ -45,3 +56,14 @@ Commit en push het bijgewerkte concert-watch-state.json naar de GitHub-repo (htt
 Artiestenlijst (57 stuks, alfabetisch): Aphex Twin, Arcade Fire, Arctic Monkeys, Big Thief, Billie Eilish, Blood Red Shoes, Blur, Bob Dylan, Bombay Bicycle Club, Bon Iver, Brian Eno, Bryan Ferry, Car Seat Headrest, Daniela Pes, David Byrne, Depeche Mode, Editors, Feist, Fever Ray, Goldband, Hang Youth, HMLTD, IDLES, Insecure Men, Interpol, Jamie XX, Joan Baez, Joni Mitchell, Kate Bush, Lana del Rey, LCD Soundsystem, Lisa O'Neill, Madra Salach, Mumford & Sons, Muse, Nick Cave and the Bad Seeds, Nicolas Jaar, Nine Inch Nails, Oasis, Paul McCartney, PJ Harvey, Portishead, Queens of the Stone Age, Radiohead, Roxy Music, Son Lux, Talk Talk, Talking Heads, The Cure, The National, The Psychotic Monks, The Smiths, The Strokes, Tom Waits, TVAM, Weval, Yeah Yeah Yeahs, Young Fathers.
 
 Belangrijk: verstuur GEEN e-mails en maak geen Gmail-concepten — de gebruiker heeft expliciet gekozen voor alleen een chatbericht in Claude. Een eventuele losse website voor deze meldingen komt later, nu nog niet bouwen.
+
+---
+
+INSTALLATIE / UPDATE OP EEN ANDERE MACHINE:
+Scheduled tasks in Claude Code staan lokaal per machine geregistreerd (niet gesynchroniseerd via git). Om deze routine op een andere pc te (her)installeren of bij te werken:
+1. Zorg dat op die pc git is ingesteld met leestoegang tot deze repo (Allerlei) en schrijftoegang tot https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git.
+2. Klonen/pullen: haal deze repo lokaal binnen (bij voorkeur op hetzelfde pad C:\Users\<gebruiker>\MZ_Code\Allerlei — wijkt dat pad af, pas dan de paden in dit bestand aan vóór je het kopieert).
+3. Kopieer de inhoud van dit bestand (alles boven deze installatiesectie, dus vanaf de "---" frontmatter t/m de laatste alinea) naar C:\Users\<gebruiker>\.claude\scheduled-tasks\nl-concert-watch\SKILL.md op die machine. Deze installatiesectie zelf hoort niet in de SKILL.md, die is alleen bedoeld voor mensen die dit bestand lezen.
+4. Registreer de scheduled task op die machine (bijv. via de `schedule`-skill of het `mcp__scheduled-tasks__create_scheduled_task`-tool) met dezelfde cron-planning als hier: wekelijks op zondag rond 21:00.
+5. Laat het systeem bij de eerste run vragen naar een herkenbare machinenaam (of maak vooraf zelf C:\Users\<gebruiker>\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt aan met die naam) — dit bestand hoort NIET in git, want elke machine heeft zijn eigen naam.
+6. Bij toekomstige updates aan deze routine: pull deze repo opnieuw en herhaal stap 3 op elke machine waar de routine draait.
