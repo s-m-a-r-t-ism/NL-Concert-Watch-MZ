@@ -14,9 +14,15 @@ Lees het bestand C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json. Dit b
 
 Lees ook C:\Users\mzijp\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt — dit bevat de vaste, door de gebruiker gekozen naam van DEZE machine (bijv. "WP-RDP"). Dit bestand is lokaal per machine (staat niet in de git repo), zodat elke geïnstalleerde machine zijn eigen naam heeft. Gebruik deze naam in STAP 6 en STAP 7. Als het bestand niet bestaat, vraag de gebruiker eenmalig hoe deze machine genoemd moet worden, maak het bestand aan met dat antwoord, en ga daarna verder.
 
-STAP 1b — Dubbel-werk-check (BELANGRIJK, deze routine draait op meerdere machines tegen dezelfde repo):
-Voordat je de zoekronde start, haal eerst de laatste stand van de repo op (git pull vanuit de lokale repo-map op deze machine) — een andere machine kan intussen al een nieuwere state gepusht hebben dan wat lokaal op schijf staat. Lees daarna "last_run" opnieuw uit het (mogelijk bijgewerkte) bestand.
-- Als "last_run" niet null is EN minder dan 6 dagen geleden ligt (t.o.v. nu): stop hier. Doe GEEN WebSearches, wijzig de state niet, en commit/push niets. Stuur alleen een kort berichtje naar de gebruiker zoals "Al deze week gecheckt op <datum/machine indien bekend> — sla over om dubbel werk te voorkomen." Dit is dan de volledige output van deze run.
+STAP 1b — Dubbel-werk-check en zelf-sync (BELANGRIJK, deze routine draait op meerdere machines tegen dezelfde repo):
+Voordat je de zoekronde start, haal eerst de laatste stand van de repo op (git pull vanuit de lokale repo-map op deze machine) — een andere machine kan intussen al een nieuwere state gepusht hebben dan wat lokaal op schijf staat, én/of een andere machine kan de routine-instructies zelf hebben bijgewerkt.
+
+Zelf-sync: vergelijk direct na de git pull de routine-sectie van het zojuist opgehaalde C:\Users\mzijp\MZ_Code\Allerlei\scheduled-task-prompt.md (alles vanaf de frontmatter "---" tot aan de "---" vóór de installatiesectie) met je eigen lokale SKILL.md-bestand (C:\Users\mzijp\.claude\scheduled-tasks\nl-concert-watch\SKILL.md, het bestand dat je nu als instructies gebruikt).
+- Zijn ze inhoudelijk gelijk: niets doen, ga verder.
+- Verschillen ze: overschrijf de lokale SKILL.md met de routine-sectie uit scheduled-task-prompt.md, zodat de VOLGENDE run met de actuele instructies start (deze huidige run loopt nog gewoon af met de instructies waarmee hij begonnen is — instructies halverwege wisselen is niet veilig). Vermeld dit kort in het chatbericht bij STAP 6, bijv. "SKILL.md was verouderd t.o.v. de repo en is bijgewerkt voor de volgende run."
+
+Dubbel-werk-check: lees daarna "last_run" opnieuw uit het (mogelijk bijgewerkte) concert-watch-state.json.
+- Als "last_run" niet null is EN minder dan 6 dagen geleden ligt (t.o.v. nu): stop hier. Doe GEEN WebSearches, wijzig de state niet, en commit/push niets (de eventuele SKILL.md-zelf-sync hierboven mag wel al zijn gebeurd, dat is geen "state"-wijziging). Stuur alleen een kort berichtje naar de gebruiker zoals "Al deze week gecheckt op <datum/machine indien bekend> — sla over om dubbel werk te voorkomen." Dit is dan de volledige output van deze run.
 - Als "last_run" null is, of 6 dagen of langer geleden ligt: ga gewoon door met STAP 2.
 
 STAP 2 — Zoek nieuwe optredens (HEEL Nederland, alle soorten locaties):
