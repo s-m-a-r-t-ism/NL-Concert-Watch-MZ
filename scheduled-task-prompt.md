@@ -39,7 +39,7 @@ Zoek voor elk NIEUW optreden (uit STAP 4) ook de bijbehorende TicketSwap-eventpa
 
 STAP 6 — Rapporteer aan de gebruiker:
 Stuur ALTIJD een kort chatbericht naar de gebruiker (dit is de enige afgesproken manier van rapporteren — GEEN e-mail versturen, geen Gmail-concepten aanmaken):
-- Sluit af met een regel welke machine de run deed, bijv. "(Run door: WP-Fat Client)" — zo kan de gebruiker runs van verschillende pc's uit elkaar houden.
+- Sluit af met een regel welke machine de run deed, bijv. "(Run door: WP-RDP)" — zo kan de gebruiker runs van verschillende pc's uit elkaar houden.
 - Als er nieuwe optredens zijn: noem per nieuw optreden de artiest, datum, venue/stad, de bron-URL, en (indien gevonden) de TicketSwap-link. Groepeer alfabetisch op artiest, zodat duidelijk is hoever de lijst is doorlopen.
 - Als er niets nieuws is: stuur alleen een kort berichtje zoals "Geen nieuwe optredens deze week voor je gevolgde artiesten." (herhaal niet de volledige lijst van bekende shows) plus de "Run door: ..."-regel.
 - Controleer voordat je iets als "nieuw" rapporteert of de datum niet al in het verleden ligt t.o.v. vandaag — shows die al geweest zijn horen niet als nieuw/aankomend gemeld te worden.
