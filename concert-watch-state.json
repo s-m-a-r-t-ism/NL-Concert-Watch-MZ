@@ -71,7 +71,8 @@
     { "artist": "Joan Baez", "date": "2026-06-07", "venue_or_city": "Koninklijk Theater Carré, Amsterdam (extra afscheidsshow, Farewell Forever Tour)", "source_url": "https://www.artiestennieuws.nl/88211/joan-baez-extra-show-carre" },
     { "artist": "Hang Youth", "date": "2025-10-24 (reeds geweest; retroactief gevonden)", "venue_or_city": "Willem Twee, 's-Hertogenbosch", "source_url": "https://www.willem-twee.nl/alle-activiteiten/hang-youth-111493702" },
     { "artist": "Nicolas Jaar", "date": "2025-11-09 (reeds geweest; retroactief gevonden; duo met Ali Sethi, Le Guess Who? festival)", "venue_or_city": "TivoliVredenburg, Utrecht", "source_url": "https://www.tivolivredenburg.nl/agenda/80866604/le-guess-who-sunday-09-11-2025" },
-    { "artist": "The Smiths", "date": "2026-02-24 (reeds geweest; retroactief gevonden; Morrissey solo-optreden, geen Smiths-reünie)", "venue_or_city": "De Doelen, Rotterdam", "source_url": "https://www.dedoelen.nl/en/agenda/morrissey-n5z8" }
+    { "artist": "The Smiths", "date": "2026-02-24 (reeds geweest; retroactief gevonden; Morrissey solo-optreden, geen Smiths-reünie)", "venue_or_city": "De Doelen, Rotterdam", "source_url": "https://www.dedoelen.nl/en/agenda/morrissey-n5z8" },
+    { "artist": "Goldband", "date": "2026-05-05", "venue_or_city": "Bevrijdingsfestival Zuid-Holland (Erasmuspodium), Euromastpark, Rotterdam", "source_url": "https://bevrijdingsfestivalzh.nl/artiest/goldband/" }
   ],
-  "last_run": "2026-08-24T00:00:00+02:00"
+  "last_run": "2026-09-01T12:00:00+02:00"
 }
