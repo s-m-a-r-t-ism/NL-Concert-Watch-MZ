@@ -5,21 +5,23 @@ description: Wekelijkse check op nieuwe concert-aankondigingen in Nederland voor
 
 Je controleert of er nieuwe concert- of festivaloptredens in Nederland zijn aangekondigd voor een vaste lijst favoriete artiesten van de gebruiker.
 
+Deze routine draait op meerdere machines (werk en privé) tegen dezelfde GitHub-repo (https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ). Alle paden hieronder zijn expres generiek/relatief geformuleerd zodat deze instructies ONGEWIJZIGD op elke machine werken — gebruik nooit een hardcoded absoluut pad (zoals een specifieke gebruikersnaam of schijfletter) in deze routine of in updates erop.
+
 STAP 1 — Lees de trackingstate en herken deze machine:
-Lees het bestand C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json. Dit bevat:
+Lees het bestand concert-watch-state.json in de working directory van deze scheduled task (dit IS je lokale clone van bovenstaande repo — twijfel je, controleer dan met `git remote -v` dat dit s-m-a-r-t-ism/NL-Concert-Watch-MZ is). Dit bevat:
 - "artists": de lijst met artiesten om te volgen, ALFABETISCH gesorteerd — houd deze volgorde aan als je de lijst afwerkt en rapporteert, zodat de gebruiker de voortgang kan volgen
 - "known_shows": een lijst van eerder gevonden/gerapporteerde optredens (elk met minstens artist, date, venue_or_city, source_url, en optioneel ticketswap_url)
 - "last_run": tijdstip van de vorige run (kan null zijn bij de eerste run)
 - "last_run_by": naam van de machine die de vorige run deed (kan ontbreken bij oudere state)
 
-Lees ook C:\Users\mzijp\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt — dit bevat de vaste, door de gebruiker gekozen naam van DEZE machine (bijv. "WP-RDP"). Dit bestand is lokaal per machine (staat niet in de git repo), zodat elke geïnstalleerde machine zijn eigen naam heeft. Gebruik deze naam in STAP 6 en STAP 7. Als het bestand niet bestaat, vraag de gebruiker eenmalig hoe deze machine genoemd moet worden, maak het bestand aan met dat antwoord, en ga daarna verder.
+Lees ook %USERPROFILE%\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt — dit bevat de vaste, door de gebruiker gekozen naam van DEZE machine (bijv. "WP-RDP"). Dit bestand is lokaal per machine (staat niet in de git repo), zodat elke geïnstalleerde machine zijn eigen naam heeft. Gebruik deze naam in STAP 6 en STAP 7. Als het bestand niet bestaat, vraag de gebruiker eenmalig hoe deze machine genoemd moet worden, maak het bestand aan met dat antwoord, en ga daarna verder.
 
 STAP 1b — Dubbel-werk-check en zelf-sync (BELANGRIJK, deze routine draait op meerdere machines tegen dezelfde repo):
-Voordat je de zoekronde start, haal eerst de laatste stand van de repo op (git pull vanuit de lokale repo-map op deze machine) — een andere machine kan intussen al een nieuwere state gepusht hebben dan wat lokaal op schijf staat, én/of een andere machine kan de routine-instructies zelf hebben bijgewerkt.
+Voordat je de zoekronde start, haal eerst de laatste stand van de repo op (git pull --rebase origin main, vanuit de working directory van deze taak) — een andere machine kan intussen al een nieuwere state gepusht hebben dan wat lokaal op schijf staat, én/of een andere machine kan de routine-instructies zelf hebben bijgewerkt.
 
-Zelf-sync: vergelijk direct na de git pull de routine-sectie van het zojuist opgehaalde C:\Users\mzijp\MZ_Code\Allerlei\scheduled-task-prompt.md (alles vanaf de frontmatter "---" tot aan de "---" vóór de installatiesectie) met je eigen lokale SKILL.md-bestand (C:\Users\mzijp\.claude\scheduled-tasks\nl-concert-watch\SKILL.md, het bestand dat je nu als instructies gebruikt).
+Zelf-sync: vergelijk direct na de git pull de routine-sectie van het zojuist opgehaalde scheduled-task-prompt.md (alles vanaf de frontmatter "---" tot aan de "---" vóór de installatiesectie) met je eigen lokale SKILL.md-bestand (%USERPROFILE%\.claude\scheduled-tasks\nl-concert-watch\SKILL.md, het bestand dat je nu als instructies gebruikt).
 - Zijn ze inhoudelijk gelijk: niets doen, ga verder.
-- Verschillen ze: overschrijf de lokale SKILL.md met de routine-sectie uit scheduled-task-prompt.md, zodat de VOLGENDE run met de actuele instructies start (deze huidige run loopt nog gewoon af met de instructies waarmee hij begonnen is — instructies halverwege wisselen is niet veilig). Vermeld dit kort in het chatbericht bij STAP 6, bijv. "SKILL.md was verouderd t.o.v. de repo en is bijgewerkt voor de volgende run."
+- Verschillen ze: overschrijf de lokale SKILL.md met de routine-sectie uit scheduled-task-prompt.md (dus letterlijk, met de generieke paden — pas ze NIET aan naar een lokaal pad), zodat de VOLGENDE run met de actuele instructies start (deze huidige run loopt nog gewoon af met de instructies waarmee hij begonnen is — instructies halverwege wisselen is niet veilig). Vermeld dit kort in het chatbericht bij STAP 6, bijv. "SKILL.md was verouderd t.o.v. de repo en is bijgewerkt voor de volgende run."
 
 Dubbel-werk-check: lees daarna "last_run" opnieuw uit het (mogelijk bijgewerkte) concert-watch-state.json.
 - Als "last_run" niet null is EN minder dan 6 dagen geleden ligt (t.o.v. nu): stop hier. Doe GEEN WebSearches, wijzig de state niet, en commit/push niets (de eventuele SKILL.md-zelf-sync hierboven mag wel al zijn gebeurd, dat is geen "state"-wijziging). Stuur alleen een kort berichtje naar de gebruiker zoals "Al deze week gecheckt op <datum/machine indien bekend> — sla over om dubbel werk te voorkomen." Dit is dan de volledige output van deze run.
@@ -51,14 +53,14 @@ Stuur ALTIJD een kort chatbericht naar de gebruiker (dit is de enige afgesproken
 - Controleer voordat je iets als "nieuw" rapporteert of de datum niet al in het verleden ligt t.o.v. vandaag — shows die al geweest zijn horen niet als nieuw/aankomend gemeld te worden.
 
 STAP 7 — Werk de state bij:
-Schrijf C:\Users\mzijp\MZ_Code\Allerlei\concert-watch-state.json opnieuw weg met:
+Schrijf concert-watch-state.json (in dezelfde working directory als STAP 1) opnieuw weg met:
 - dezelfde "artists" lijst, alfabetisch gesorteerd (tenzij de gebruiker later een update geeft)
 - "known_shows" aangevuld met alle nieuw gevonden shows, elk met artist, date, venue_or_city, source_url, en ticketswap_url indien gevonden in STAP 5 (verwijder geen oude shows, ook niet als het optreden al is geweest — dat voorkomt dubbele meldingen)
 - "last_run" op de huidige datum/tijd
 - "last_run_by" op de machinenaam uit machine-name.txt (zie STAP 1)
 
 STAP 8 — Publiceer de bijgewerkte state naar GitHub:
-Commit en push het bijgewerkte concert-watch-state.json naar de GitHub-repo (https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git), zodat de website concerts.smartism.art (gehost via GitHub Pages vanuit deze repo) automatisch up-to-date blijft. Deze routine draait op meerdere machines (werk en privé) tegen dezelfde repo — dat is de bedoeling, dus haal eerst de laatste stand op om conflicten te voorkomen. Voer uit vanuit C:\Users\mzijp\MZ_Code\Allerlei:
+Commit en push het bijgewerkte concert-watch-state.json naar de GitHub-repo (https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git), zodat de website concerts.smartism.art (gehost via GitHub Pages vanuit deze repo) automatisch up-to-date blijft. Deze routine draait op meerdere machines (werk en privé) tegen dezelfde repo — dat is de bedoeling, dus haal eerst de laatste stand op om conflicten te voorkomen. Voer uit vanuit de working directory van deze taak (je lokale repo-clone):
 - git add concert-watch-state.json
 - git commit -m "Update concert-watch-state.json - <datum van vandaag>" (sla deze stap over als er niets gewijzigd is)
 - git pull --rebase origin main
@@ -71,10 +73,10 @@ Belangrijk: verstuur GEEN e-mails en maak geen Gmail-concepten — de gebruiker 
 ---
 
 INSTALLATIE / UPDATE OP EEN ANDERE MACHINE:
-Scheduled tasks in Claude Code staan lokaal per machine geregistreerd (niet gesynchroniseerd via git). Om deze routine op een andere pc te (her)installeren of bij te werken:
-1. Zorg dat op die pc git is ingesteld met leestoegang tot deze repo (Allerlei) en schrijftoegang tot https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git.
-2. Klonen/pullen: haal deze repo lokaal binnen (bij voorkeur op hetzelfde pad C:\Users\<gebruiker>\MZ_Code\Allerlei — wijkt dat pad af, pas dan de paden in dit bestand aan vóór je het kopieert).
-3. Kopieer de inhoud van dit bestand (alles boven deze installatiesectie, dus vanaf de "---" frontmatter t/m de laatste alinea) naar C:\Users\<gebruiker>\.claude\scheduled-tasks\nl-concert-watch\SKILL.md op die machine. Deze installatiesectie zelf hoort niet in de SKILL.md, die is alleen bedoeld voor mensen die dit bestand lezen.
-4. Registreer de scheduled task op die machine (bijv. via de `schedule`-skill of het `mcp__scheduled-tasks__create_scheduled_task`-tool) met dezelfde cron-planning als hier: wekelijks op zondag rond 21:00.
-5. Laat het systeem bij de eerste run vragen naar een herkenbare machinenaam (of maak vooraf zelf C:\Users\<gebruiker>\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt aan met die naam) — dit bestand hoort NIET in git, want elke machine heeft zijn eigen naam.
-6. Bij toekomstige updates aan deze routine: pull deze repo opnieuw en herhaal stap 3 op elke machine waar de routine draait.
+Scheduled tasks in Claude Code staan lokaal per machine geregistreerd (niet gesynchroniseerd via git). Om deze routine op een andere pc te (her)installeren:
+1. Zorg dat op die pc git is ingesteld met lees- en schrijftoegang tot https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ.git.
+2. Kloon/pull deze repo lokaal, op een zelfgekozen pad — dat pad hoeft nergens anders te worden vastgelegd, want deze instructies verwijzen er nooit hardcoded naar (alle paden hierboven zijn generiek: working directory van de taak, of %USERPROFILE%).
+3. Kopieer de inhoud van dit bestand (alles boven deze installatiesectie, dus vanaf de "---" frontmatter t/m de laatste alinea, LETTERLIJK inclusief de generieke paden) naar %USERPROFILE%\.claude\scheduled-tasks\nl-concert-watch\SKILL.md op die machine. Deze installatiesectie zelf hoort niet in de SKILL.md.
+4. Registreer de scheduled task op die machine (bijv. via de `schedule`-skill of het `mcp__scheduled-tasks__create_scheduled_task`-tool), met als working directory de repo-clone uit stap 2, en dezelfde cron-planning als hier: wekelijks op zondag rond 21:00.
+5. Laat het systeem bij de eerste run vragen naar een herkenbare machinenaam (of maak vooraf zelf %USERPROFILE%\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt aan met die naam) — dit bestand hoort NIET in git, want elke machine heeft zijn eigen naam.
+6. Bij toekomstige inhoudelijke updates aan deze routine (nieuwe artiesten, gewijzigde logica, etc.): dankzij STAP 1b hierboven synchroniseert elke machine zichzelf automatisch bij zijn eerstvolgende geplande run — een handmatige herinstallatie per machine is dus niet meer nodig. Wil je een update liever meteen laten doorwerken zonder op de volgende geplande run te wachten, laat Claude dan op die machine dit ene zinnetje uitvoeren: "Doe git pull in de lokale clone van https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ, lees daarna scheduled-task-prompt.md, en update daarmee de prompt van de nl-concert-watch scheduled task."
