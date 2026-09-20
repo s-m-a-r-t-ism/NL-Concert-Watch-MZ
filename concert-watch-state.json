@@ -72,8 +72,11 @@
     { "artist": "Hang Youth", "date": "2025-10-24 (reeds geweest; retroactief gevonden)", "venue_or_city": "Willem Twee, 's-Hertogenbosch", "source_url": "https://www.willem-twee.nl/alle-activiteiten/hang-youth-111493702" },
     { "artist": "Nicolas Jaar", "date": "2025-11-09 (reeds geweest; retroactief gevonden; duo met Ali Sethi, Le Guess Who? festival)", "venue_or_city": "TivoliVredenburg, Utrecht", "source_url": "https://www.tivolivredenburg.nl/agenda/80866604/le-guess-who-sunday-09-11-2025" },
     { "artist": "The Smiths", "date": "2026-02-24 (reeds geweest; retroactief gevonden; Morrissey solo-optreden, geen Smiths-reünie)", "venue_or_city": "De Doelen, Rotterdam", "source_url": "https://www.dedoelen.nl/en/agenda/morrissey-n5z8" },
-    { "artist": "Goldband", "date": "2026-05-05 (reeds geweest; abusievelijk als nieuw gemeld zonder datumcheck)", "venue_or_city": "Bevrijdingsfestival Zuid-Holland (Erasmuspodium), Euromastpark, Rotterdam", "source_url": "https://bevrijdingsfestivalzh.nl/artiest/goldband/" }
+    { "artist": "Goldband", "date": "2026-05-05 (reeds geweest; abusievelijk als nieuw gemeld zonder datumcheck)", "venue_or_city": "Bevrijdingsfestival Zuid-Holland (Erasmuspodium), Euromastpark, Rotterdam", "source_url": "https://bevrijdingsfestivalzh.nl/artiest/goldband/" },
+    { "artist": "Oasis", "date": "2027-07-16", "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, support Richard Ashcroft; tickets via registratie/lotingsysteem, geen vrije verkoop)", "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/" },
+    { "artist": "Oasis", "date": "2027-07-17", "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, tickets via registratie/lotingsysteem, geen vrije verkoop)", "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/" },
+    { "artist": "Weval", "date": "2026-10-10", "venue_or_city": "EKKO, Utrecht (Weval presents: CLUB CHOROPHOBIA, DJ-set all-nighter 23:30-04:00)", "source_url": "https://ekko.nl/en/event/weval-presents-club-chorophobia/" }
   ],
-  "last_run": "2026-09-14T12:00:00+02:00",
-  "last_run_by": "WP-Fat Client"
+  "last_run": "2026-09-20T20:05:00+02:00",
+  "last_run_by": "Thinkpad_thuis"
 }
