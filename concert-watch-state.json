@@ -75,8 +75,9 @@
     { "artist": "Goldband", "date": "2026-05-05 (reeds geweest; abusievelijk als nieuw gemeld zonder datumcheck)", "venue_or_city": "Bevrijdingsfestival Zuid-Holland (Erasmuspodium), Euromastpark, Rotterdam", "source_url": "https://bevrijdingsfestivalzh.nl/artiest/goldband/" },
     { "artist": "Oasis", "date": "2027-07-16", "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, support Richard Ashcroft; tickets via registratie/lotingsysteem, geen vrije verkoop)", "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/" },
     { "artist": "Oasis", "date": "2027-07-17", "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, tickets via registratie/lotingsysteem, geen vrije verkoop)", "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/" },
-    { "artist": "Weval", "date": "2026-10-10", "venue_or_city": "EKKO, Utrecht (Weval presents: CLUB CHOROPHOBIA, DJ-set all-nighter 23:30-04:00)", "source_url": "https://ekko.nl/en/event/weval-presents-club-chorophobia/" }
+    { "artist": "Weval", "date": "2026-10-10", "venue_or_city": "EKKO, Utrecht (Weval presents: CLUB CHOROPHOBIA, DJ-set all-nighter 23:30-04:00)", "source_url": "https://ekko.nl/en/event/weval-presents-club-chorophobia/" },
+    { "artist": "The Smiths", "date": "2026-12-28", "venue_or_city": "013 Poppodium, Tilburg (Morrissey solo-optreden, geen Smiths-reünie; enige NL-show)", "source_url": "https://www.013.nl/en/events/128536/morrissey" }
   ],
-  "last_run": "2026-09-20T20:05:00+02:00",
-  "last_run_by": "Thinkpad_thuis"
+  "last_run": "2026-09-28T12:00:00+02:00",
+  "last_run_by": "WP-Fat Client"
 }
