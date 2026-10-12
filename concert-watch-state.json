@@ -1,85 +1,470 @@
 {
   "artists": [
-    "Aphex Twin", "Arcade Fire", "Arctic Monkeys", "Big Thief", "Billie Eilish",
-    "Blood Red Shoes", "Blur", "Bob Dylan", "Bombay Bicycle Club", "Bon Iver",
-    "Brian Eno", "Bryan Ferry", "Car Seat Headrest", "Daniela Pes", "David Byrne",
-    "Depeche Mode", "Editors", "Feist", "Fever Ray", "Goldband", "Hang Youth", "HMLTD",
-    "IDLES", "Insecure Men", "Interpol", "Jamie XX", "Joan Baez", "Joni Mitchell",
-    "Kate Bush", "Lana del Rey", "LCD Soundsystem", "Lisa O'Neill", "Madra Salach",
-    "Mumford & Sons", "Muse", "Nick Cave and the Bad Seeds", "Nicolas Jaar",
-    "Nine Inch Nails", "Oasis", "Paul McCartney", "PJ Harvey", "Portishead",
-    "Queens of the Stone Age", "Radiohead", "Rosalía", "Roxy Music", "Son Lux", "Talk Talk",
-    "Talking Heads", "The Cure", "The National", "The Psychotic Monks",
-    "The Smiths", "The Strokes", "Tom Waits", "TVAM", "Weval", "Yeah Yeah Yeahs",
+    "Aphex Twin",
+    "Arcade Fire",
+    "Arctic Monkeys",
+    "Big Thief",
+    "Billie Eilish",
+    "Blood Red Shoes",
+    "Blur",
+    "Bob Dylan",
+    "Bombay Bicycle Club",
+    "Bon Iver",
+    "Brian Eno",
+    "Bryan Ferry",
+    "Car Seat Headrest",
+    "Daniela Pes",
+    "David Byrne",
+    "Depeche Mode",
+    "Editors",
+    "Feist",
+    "Fever Ray",
+    "Goldband",
+    "Hang Youth",
+    "HMLTD",
+    "IDLES",
+    "Insecure Men",
+    "Interpol",
+    "Jamie XX",
+    "Joan Baez",
+    "Joni Mitchell",
+    "Kate Bush",
+    "Lana del Rey",
+    "LCD Soundsystem",
+    "Lisa O'Neill",
+    "Madra Salach",
+    "Mumford & Sons",
+    "Muse",
+    "Nick Cave and the Bad Seeds",
+    "Nicolas Jaar",
+    "Nine Inch Nails",
+    "Oasis",
+    "Paul McCartney",
+    "PJ Harvey",
+    "Portishead",
+    "Queens of the Stone Age",
+    "Radiohead",
+    "Rosalía",
+    "Roxy Music",
+    "Son Lux",
+    "Talk Talk",
+    "Talking Heads",
+    "The Cure",
+    "The National",
+    "The Psychotic Monks",
+    "The Smiths",
+    "The Strokes",
+    "Tom Waits",
+    "TVAM",
+    "Weval",
+    "Yeah Yeah Yeahs",
     "Young Fathers"
   ],
   "known_shows": [
-    { "artist": "Muse", "date": "2026-11-29", "venue_or_city": "Ziggo Dome, Amsterdam", "source_url": "https://ziggodome.nl/en/events/31710bab-a5ce-46c9-83a2-fe1c9e751810/", "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/muse-amsterdam-ziggo-dome-2026-11-29-Cby6wZqkBKjT9cB4GFod5" },
-    { "artist": "Muse", "date": "2026-11-30", "venue_or_city": "Ziggo Dome, Amsterdam", "source_url": "https://ziggodome.nl/en/events/31710bab-a5ce-46c9-83a2-fe1c9e751810/", "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/muse-amsterdam-ziggo-dome-2026-11-30-Cby6zngFKckmfBWkYEuk6" },
-    { "artist": "Weval", "date": "2026-03-20", "venue_or_city": "Doornroosje, Nijmegen", "source_url": "https://www.doornroosje.nl/en/event/weval-4/" },
-    { "artist": "Weval", "date": "2026-03-27", "venue_or_city": "Paradiso, Amsterdam", "source_url": "https://www.paradiso.nl/programma/weval/2686857" },
-    { "artist": "Weval", "date": "2026-03-28", "venue_or_city": "SPOT De Oosterpoort, Groningen", "source_url": "https://www.spotgroningen.nl/programma/weval-3/" },
-    { "artist": "Weval", "date": "2026-04-16", "venue_or_city": "MOMO Festival, Rotterdam", "source_url": "https://motelmozaique.nl/festival/line-up/" },
-    { "artist": "Weval", "date": "2026-06-13", "venue_or_city": "Best Kept Secret Festival, Hilvarenbeek", "source_url": "https://www.bestkeptsecret.nl/program/list" },
-    { "artist": "Hang Youth", "date": "2025-09-28", "venue_or_city": "Luxor Live, Arnhem", "source_url": "https://www.luxorlive.nl/agenda/hang-youth-3/" },
-    { "artist": "Hang Youth", "date": "2025-10-09", "venue_or_city": "Patronaat, Haarlem", "source_url": "https://patronaat.nl/programma/" },
-    { "artist": "Hang Youth", "date": "2025-10-17", "venue_or_city": "Burgerweeshuis, Deventer", "source_url": "https://www.burgerweeshuis.nl/events/hang-youth" },
-    { "artist": "David Byrne", "date": "2026-02-15", "venue_or_city": "AFAS Live, Amsterdam", "source_url": "https://www.afaslive.nl/nieuws/david-byrne-zet-strakke-show-neer" },
-    { "artist": "David Byrne", "date": "2026-02-16", "venue_or_city": "AFAS Live, Amsterdam", "source_url": "https://www.afaslive.nl/nieuws/david-byrne-zet-strakke-show-neer" },
-    { "artist": "David Byrne", "date": "2026-07-04", "venue_or_city": "Down The Rabbit Hole (Hotot stage), Beuningen", "source_url": "https://downtherabbithole.nl/programma/david-byrne" },
-    { "artist": "Paul McCartney", "date": "2026-05-29", "venue_or_city": "Goffertpark, Nijmegen (BEVESTIGD GECANCELD: officiële pagina paulmccartney.com/live/goffert-park-nijmegen toont deze show expliciet als 'Cancelled', restant van de geannuleerde 2020 Freshen Up-tour; geen nieuwe 2026-datum aangekondigd)", "source_url": "https://www.ticketmaster.nl/artist/paul-mccartney-tickets/1444?language=en-us" },
-    { "artist": "The Strokes", "date": "2026-10-11", "venue_or_city": "Ziggo Dome, Amsterdam", "source_url": "https://ziggodome.nl/en/events/107572e1-891a-4f1f-a34b-7ecdabb1629b/", "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/the-strokes-amsterdam-ziggo-dome-2026-10-11-Ca3MpGFwR2bJd9dxdHt2k" },
-    { "artist": "Son Lux", "date": "2026-10-26", "venue_or_city": "TivoliVredenburg, Utrecht", "source_url": "https://www.tivolivredenburg.nl/agenda/48173061/son-lux-26-10-2026" },
-    { "artist": "Mumford & Sons", "date": "2026-07-01", "venue_or_city": "Stadspark, Groningen", "source_url": "https://www.spotgroningen.nl/events/summerstage/programma/mumford-sons/", "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/mumford-sons-groningen-stadspark-2026-07-01-CVxXXQhjTfcohtNCJBSbd" },
-    { "artist": "Nick Cave and the Bad Seeds", "date": "2026-06-10", "venue_or_city": "Best Kept Secret Festival, Hilvarenbeek", "source_url": "https://www.bestkeptsecret.nl/program/list" },
-    { "artist": "Big Thief", "date": "2026-04-21", "venue_or_city": "AFAS Live, Amsterdam", "source_url": "https://www.afaslive.nl/en/agenda/big-thief" },
-    { "artist": "Bob Dylan", "date": "2025-11-04", "venue_or_city": "AFAS Live, Amsterdam", "source_url": "https://www.afaslive.nl/agenda" },
-    { "artist": "Bob Dylan", "date": "2025-11-05", "venue_or_city": "AFAS Live, Amsterdam", "source_url": "https://www.afaslive.nl/agenda" },
-    { "artist": "The Cure", "date": "2026-06-20", "venue_or_city": "Pinkpop Festival, Landgraaf", "source_url": "https://www.pinkpop.nl/en/line-up/the-cure/" },
-    { "artist": "Editors", "date": "2026-06-20", "venue_or_city": "Pinkpop Festival, Landgraaf", "source_url": "https://www.pinkpop.nl/en/line-up/editors/" },
-    { "artist": "Editors", "date": "2027-02-18", "venue_or_city": "Ziggo Dome, Amsterdam", "source_url": "https://ziggodome.nl/en/" },
-    { "artist": "IDLES", "date": "2026-06-20", "venue_or_city": "Pinkpop Festival, Landgraaf", "source_url": "https://www.pinkpop.nl/en/line-up/idles/" },
-    { "artist": "Blood Red Shoes", "date": "2026-10-16", "venue_or_city": "TivoliVredenburg, Utrecht", "source_url": "https://www.tivolivredenburg.nl/agenda/77819349/blood-red-shoes-16-10-2026" },
-    { "artist": "Blood Red Shoes", "date": "2026-10-17", "venue_or_city": "Tolhuistuin, Amsterdam", "source_url": "https://www.paradiso.nl/en/program/blood-red-shoes/2813652" },
-    { "artist": "Blood Red Shoes", "date": "2026-10-19", "venue_or_city": "Doornroosje, Nijmegen", "source_url": "https://www.doornroosje.nl/en/event/blood-red-shoes-3/" },
-    { "artist": "Blood Red Shoes", "date": "2026-10-20", "venue_or_city": "Effenaar, Eindhoven", "source_url": "https://www.effenaar.nl/agenda" },
-    { "artist": "TVAM", "date": "2026-09-13", "venue_or_city": "Paradiso, Amsterdam", "source_url": "https://www.paradiso.nl/en" },
-    { "artist": "Interpol", "date": "2026-11-17", "venue_or_city": "AFAS Live, Amsterdam", "source_url": "https://www.afaslive.nl/agenda/bloc-party-interpol", "ticketswap_url": "https://www.ticketswap.nl/event/bloc-party-amsterdam-afas-live-nov-17-2026/019a5402-8154-7e7d-9834-b1b6000f6175" },
-    { "artist": "Daniela Pes", "date": "2026-01-14 to 2026-01-17", "venue_or_city": "ESNS (Eurosonic Noorderslag), Groningen (exact dagdeel nog niet bevestigd)", "source_url": "https://esns.nl/en/festival/artists/daniela-pes/" },
-    { "artist": "Hang Youth", "date": "2026-07-03", "venue_or_city": "Wilde Weide Festival (De Baan stage), Kraggenburg", "source_url": "https://wildeweide.nl/" },
-    { "artist": "Jamie XX", "date": "2026-07-05", "venue_or_city": "Down The Rabbit Hole (als The xx), Beuningen", "source_url": "https://downtherabbithole.nl/programma/the-xx" },
-    { "artist": "Weval", "date": "2026-03-21", "venue_or_city": "PAARD, Den Haag", "source_url": "https://www.paard.nl/en/event/weval-2/" },
-    { "artist": "Weval", "date": "2026-03-26", "venue_or_city": "013 Poppodium, Tilburg", "source_url": "https://www.013.nl/en/events/117151/weval", "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/weval-tilburg-poppodium-013-2026-03-26-RYCFvMzRHMtNGpMYuJRuVH" },
-    { "artist": "Hang Youth", "date": "2026-06-20", "venue_or_city": "Pinkpop Festival, Landgraaf", "source_url": "https://www.pinkpop.nl/en/line-up/hang-youth/" },
-    { "artist": "Goldband", "date": "2026-07-03", "venue_or_city": "Wilde Weide Festival, Kraggenburg", "source_url": "https://wildeweide.nl/en/program/" },
-    { "artist": "Hang Youth", "date": "2026-12-26", "venue_or_city": "Paradiso, Amsterdam (Hardkoor Nachtmis)", "source_url": "https://www.paradiso.nl/en/program/hang-youth-hardkoor-nachtmis/2913084" },
-    { "artist": "Hang Youth", "date": "2026-07-11 (o.b.v. tijdschema; festival loopt 9 t/m 12 juli 2026, exacte dag niet 100% officieel bevestigd)", "venue_or_city": "Wildeburg Festival, Kraggenburg", "source_url": "https://wildeburg.nl/en/program/" },
-    { "artist": "Nicolas Jaar", "date": "2026-07-30", "venue_or_city": "Melkweg, Amsterdam (als DARKSIDE, Dekmantel Festival 'Into the City')", "source_url": "https://www.melkweg.nl/en/agenda/dekmantel-festival-darkside-headache-juan-atkins-pres-infiniti-new-york-ea-30-07-2026/" },
-    { "artist": "Weval", "date": "2026-10-02", "venue_or_city": "Patronaat, Haarlem (Haarlem Vinyl Festival, met Ineffekt + Nebula)", "source_url": "https://patronaat.nl/event/weval-support-haarlem-vinyl-festival-02-10-26/" },
-    { "artist": "Madra Salach", "date": "2026-06-13", "venue_or_city": "Best Kept Secret Festival, Hilvarenbeek", "source_url": "https://www.bestkeptsecret.nl/bands/madra-salach" },
-    { "artist": "Madra Salach", "date": "2026-09-19", "venue_or_city": "EKKO, Utrecht", "source_url": "https://ekko.nl/en/upcoming/" },
-    { "artist": "Madra Salach", "date": "2026-08-27 to 2026-08-30 (exacte dag niet bevestigd; festival loopt 27 t/m 30 augustus 2026)", "venue_or_city": "Into The Great Wide Open, Vlieland", "source_url": "https://intothegreatwideopen.nl/en/programma/madra-salach" },
-    { "artist": "Madra Salach", "date": "2026-01-15 (reeds geweest; retroactief gevonden)", "venue_or_city": "Nieuwe Kerk, Groningen (ESNS / Eurosonic Noorderslag 2026)", "source_url": "https://esns.nl/nl/festival/artists/madra-salach/" },
-    { "artist": "Weval", "date": "2026-06-26 (reeds geweest; retroactief gevonden)", "venue_or_city": "Lago Lago Festival, Stroombroek, Braamt", "source_url": "https://lagolago.nl/" },
-    { "artist": "Hang Youth", "date": "2026-04-27 (Dag 2/Koningsdag, Main Stage; reeds geweest; retroactief gevonden)", "venue_or_city": "Kroongetuige Festival (Hall of Fame / Spoorzone), Tilburg", "source_url": "https://hall-fame.nl/programma/kroongetuige-maandag-111549927" },
-    { "artist": "Hang Youth", "date": "2026-07-25", "venue_or_city": "WeitjeRock Festival, IJzendijke", "source_url": "https://www.weitjerock.com/line-up/zaterdag/" },
-    { "artist": "Hang Youth", "date": "2025-10-16 (reeds geweest; retroactief gevonden)", "venue_or_city": "Mezz, Breda", "source_url": "https://www.mezz.nl/programma/hang-youth-2/" },
-    { "artist": "Lisa O'Neill", "date": "2026-11-03", "venue_or_city": "Merleyn, Nijmegen", "source_url": "https://www.doornroosje.nl/event/lisa-oneill/" },
-    { "artist": "Queens of the Stone Age", "date": "2025-10-26 (reeds geweest; retroactief gevonden)", "venue_or_city": "Koninklijk Theater Carré, Amsterdam (The Catacombs Tour)", "source_url": "https://carre.nl/voorstelling/queens-of-the-stone-age-the-catacombs-tour" },
-    { "artist": "Madra Salach", "date": "2026-08-05 (reeds geweest; retroactief gevonden)", "venue_or_city": "Openluchttheater De Goffert, Nijmegen (support voor Black Country, New Road)", "source_url": "https://www.doornroosje.nl/en/event/black-country-new-road/" },
-    { "artist": "Goldband", "date": "2026-04-27 (reeds geweest; retroactief gevonden)", "venue_or_city": "Oranjebitter Festival, Roel Langerakpark, Rotterdam", "source_url": "https://oranjebitter-rotterdam.nl/", "ticketswap_url": "https://www.ticketswap.nl/festival-tickets/oranjebitter-festival-2026-rotterdam-roel-langerakpark-2026-04-27-CVM2xYrZa9GpvEmMDzxQb" },
-    { "artist": "Joan Baez", "date": "2026-06-07", "venue_or_city": "Koninklijk Theater Carré, Amsterdam (extra afscheidsshow, Farewell Forever Tour)", "source_url": "https://www.artiestennieuws.nl/88211/joan-baez-extra-show-carre" },
-    { "artist": "Hang Youth", "date": "2025-10-24 (reeds geweest; retroactief gevonden)", "venue_or_city": "Willem Twee, 's-Hertogenbosch", "source_url": "https://www.willem-twee.nl/alle-activiteiten/hang-youth-111493702" },
-    { "artist": "Nicolas Jaar", "date": "2025-11-09 (reeds geweest; retroactief gevonden; duo met Ali Sethi, Le Guess Who? festival)", "venue_or_city": "TivoliVredenburg, Utrecht", "source_url": "https://www.tivolivredenburg.nl/agenda/80866604/le-guess-who-sunday-09-11-2025" },
-    { "artist": "The Smiths", "date": "2026-02-24 (reeds geweest; retroactief gevonden; Morrissey solo-optreden, geen Smiths-reünie)", "venue_or_city": "De Doelen, Rotterdam", "source_url": "https://www.dedoelen.nl/en/agenda/morrissey-n5z8" },
-    { "artist": "Goldband", "date": "2026-05-05 (reeds geweest; abusievelijk als nieuw gemeld zonder datumcheck)", "venue_or_city": "Bevrijdingsfestival Zuid-Holland (Erasmuspodium), Euromastpark, Rotterdam", "source_url": "https://bevrijdingsfestivalzh.nl/artiest/goldband/" },
-    { "artist": "Oasis", "date": "2027-07-16", "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, support Richard Ashcroft; tickets via registratie/lotingsysteem, geen vrije verkoop)", "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/" },
-    { "artist": "Oasis", "date": "2027-07-17", "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, tickets via registratie/lotingsysteem, geen vrije verkoop)", "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/" },
-    { "artist": "Weval", "date": "2026-10-10", "venue_or_city": "EKKO, Utrecht (Weval presents: CLUB CHOROPHOBIA, DJ-set all-nighter 23:30-04:00)", "source_url": "https://ekko.nl/en/event/weval-presents-club-chorophobia/" },
-    { "artist": "The Smiths", "date": "2026-12-28", "venue_or_city": "013 Poppodium, Tilburg (Morrissey solo-optreden, geen Smiths-reünie; enige NL-show)", "source_url": "https://www.013.nl/en/events/128536/morrissey" },
-    { "artist": "Rosalía", "date": "2026-04-22 (reeds geweest; retroactief gevonden)", "venue_or_city": "Ziggo Dome, Amsterdam (LUX Tour 2026)", "source_url": "https://ziggodome.nl/en/events/d3e80abb-1815-44ea-b0ff-76d4b0571f97/" },
-    { "artist": "Rosalía", "date": "2026-04-23 (reeds geweest; retroactief gevonden; extra show)", "venue_or_city": "Ziggo Dome, Amsterdam (LUX Tour 2026)", "source_url": "https://ziggodome.nl/en/events/d3e80abb-1815-44ea-b0ff-76d4b0571f97/" }
+    {
+      "artist": "Muse",
+      "date": "2026-11-29",
+      "venue_or_city": "Ziggo Dome, Amsterdam",
+      "source_url": "https://ziggodome.nl/en/events/31710bab-a5ce-46c9-83a2-fe1c9e751810/",
+      "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/muse-amsterdam-ziggo-dome-2026-11-29-Cby6wZqkBKjT9cB4GFod5"
+    },
+    {
+      "artist": "Muse",
+      "date": "2026-11-30",
+      "venue_or_city": "Ziggo Dome, Amsterdam",
+      "source_url": "https://ziggodome.nl/en/events/31710bab-a5ce-46c9-83a2-fe1c9e751810/",
+      "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/muse-amsterdam-ziggo-dome-2026-11-30-Cby6zngFKckmfBWkYEuk6"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-03-20",
+      "venue_or_city": "Doornroosje, Nijmegen",
+      "source_url": "https://www.doornroosje.nl/en/event/weval-4/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-03-27",
+      "venue_or_city": "Paradiso, Amsterdam",
+      "source_url": "https://www.paradiso.nl/programma/weval/2686857"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-03-28",
+      "venue_or_city": "SPOT De Oosterpoort, Groningen",
+      "source_url": "https://www.spotgroningen.nl/programma/weval-3/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-04-16",
+      "venue_or_city": "MOMO Festival, Rotterdam",
+      "source_url": "https://motelmozaique.nl/festival/line-up/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-06-13",
+      "venue_or_city": "Best Kept Secret Festival, Hilvarenbeek",
+      "source_url": "https://www.bestkeptsecret.nl/program/list"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2025-09-28",
+      "venue_or_city": "Luxor Live, Arnhem",
+      "source_url": "https://www.luxorlive.nl/agenda/hang-youth-3/"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2025-10-09",
+      "venue_or_city": "Patronaat, Haarlem",
+      "source_url": "https://patronaat.nl/programma/"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2025-10-17",
+      "venue_or_city": "Burgerweeshuis, Deventer",
+      "source_url": "https://www.burgerweeshuis.nl/events/hang-youth"
+    },
+    {
+      "artist": "David Byrne",
+      "date": "2026-02-15",
+      "venue_or_city": "AFAS Live, Amsterdam",
+      "source_url": "https://www.afaslive.nl/nieuws/david-byrne-zet-strakke-show-neer"
+    },
+    {
+      "artist": "David Byrne",
+      "date": "2026-02-16",
+      "venue_or_city": "AFAS Live, Amsterdam",
+      "source_url": "https://www.afaslive.nl/nieuws/david-byrne-zet-strakke-show-neer"
+    },
+    {
+      "artist": "David Byrne",
+      "date": "2026-07-04",
+      "venue_or_city": "Down The Rabbit Hole (Hotot stage), Beuningen",
+      "source_url": "https://downtherabbithole.nl/programma/david-byrne"
+    },
+    {
+      "artist": "Paul McCartney",
+      "date": "2026-05-29",
+      "venue_or_city": "Goffertpark, Nijmegen (BEVESTIGD GECANCELD: officiële pagina paulmccartney.com/live/goffert-park-nijmegen toont deze show expliciet als 'Cancelled', restant van de geannuleerde 2020 Freshen Up-tour; geen nieuwe 2026-datum aangekondigd)",
+      "source_url": "https://www.ticketmaster.nl/artist/paul-mccartney-tickets/1444?language=en-us"
+    },
+    {
+      "artist": "The Strokes",
+      "date": "2026-10-11",
+      "venue_or_city": "Ziggo Dome, Amsterdam",
+      "source_url": "https://ziggodome.nl/en/events/107572e1-891a-4f1f-a34b-7ecdabb1629b/",
+      "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/the-strokes-amsterdam-ziggo-dome-2026-10-11-Ca3MpGFwR2bJd9dxdHt2k"
+    },
+    {
+      "artist": "Son Lux",
+      "date": "2026-10-26",
+      "venue_or_city": "TivoliVredenburg, Utrecht",
+      "source_url": "https://www.tivolivredenburg.nl/agenda/48173061/son-lux-26-10-2026"
+    },
+    {
+      "artist": "Mumford & Sons",
+      "date": "2026-07-01",
+      "venue_or_city": "Stadspark, Groningen",
+      "source_url": "https://www.spotgroningen.nl/events/summerstage/programma/mumford-sons/",
+      "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/mumford-sons-groningen-stadspark-2026-07-01-CVxXXQhjTfcohtNCJBSbd"
+    },
+    {
+      "artist": "Nick Cave and the Bad Seeds",
+      "date": "2026-06-10",
+      "venue_or_city": "Best Kept Secret Festival, Hilvarenbeek",
+      "source_url": "https://www.bestkeptsecret.nl/program/list"
+    },
+    {
+      "artist": "Big Thief",
+      "date": "2026-04-21",
+      "venue_or_city": "AFAS Live, Amsterdam",
+      "source_url": "https://www.afaslive.nl/en/agenda/big-thief"
+    },
+    {
+      "artist": "Bob Dylan",
+      "date": "2025-11-04",
+      "venue_or_city": "AFAS Live, Amsterdam",
+      "source_url": "https://www.afaslive.nl/agenda"
+    },
+    {
+      "artist": "Bob Dylan",
+      "date": "2025-11-05",
+      "venue_or_city": "AFAS Live, Amsterdam",
+      "source_url": "https://www.afaslive.nl/agenda"
+    },
+    {
+      "artist": "The Cure",
+      "date": "2026-06-20",
+      "venue_or_city": "Pinkpop Festival, Landgraaf",
+      "source_url": "https://www.pinkpop.nl/en/line-up/the-cure/"
+    },
+    {
+      "artist": "Editors",
+      "date": "2026-06-20",
+      "venue_or_city": "Pinkpop Festival, Landgraaf",
+      "source_url": "https://www.pinkpop.nl/en/line-up/editors/"
+    },
+    {
+      "artist": "Editors",
+      "date": "2027-02-18",
+      "venue_or_city": "Ziggo Dome, Amsterdam",
+      "source_url": "https://ziggodome.nl/en/"
+    },
+    {
+      "artist": "IDLES",
+      "date": "2026-06-20",
+      "venue_or_city": "Pinkpop Festival, Landgraaf",
+      "source_url": "https://www.pinkpop.nl/en/line-up/idles/"
+    },
+    {
+      "artist": "Blood Red Shoes",
+      "date": "2026-10-16",
+      "venue_or_city": "TivoliVredenburg, Utrecht",
+      "source_url": "https://www.tivolivredenburg.nl/agenda/77819349/blood-red-shoes-16-10-2026"
+    },
+    {
+      "artist": "Blood Red Shoes",
+      "date": "2026-10-17",
+      "venue_or_city": "Tolhuistuin, Amsterdam",
+      "source_url": "https://www.paradiso.nl/en/program/blood-red-shoes/2813652"
+    },
+    {
+      "artist": "Blood Red Shoes",
+      "date": "2026-10-19",
+      "venue_or_city": "Doornroosje, Nijmegen",
+      "source_url": "https://www.doornroosje.nl/en/event/blood-red-shoes-3/"
+    },
+    {
+      "artist": "Blood Red Shoes",
+      "date": "2026-10-20",
+      "venue_or_city": "Effenaar, Eindhoven",
+      "source_url": "https://www.effenaar.nl/agenda"
+    },
+    {
+      "artist": "TVAM",
+      "date": "2026-09-13",
+      "venue_or_city": "Paradiso, Amsterdam",
+      "source_url": "https://www.paradiso.nl/en"
+    },
+    {
+      "artist": "Interpol",
+      "date": "2026-11-17",
+      "venue_or_city": "AFAS Live, Amsterdam",
+      "source_url": "https://www.afaslive.nl/agenda/bloc-party-interpol",
+      "ticketswap_url": "https://www.ticketswap.nl/event/bloc-party-amsterdam-afas-live-nov-17-2026/019a5402-8154-7e7d-9834-b1b6000f6175"
+    },
+    {
+      "artist": "Daniela Pes",
+      "date": "2026-01-14 to 2026-01-17",
+      "venue_or_city": "ESNS (Eurosonic Noorderslag), Groningen (exact dagdeel nog niet bevestigd)",
+      "source_url": "https://esns.nl/en/festival/artists/daniela-pes/"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2026-07-03",
+      "venue_or_city": "Wilde Weide Festival (De Baan stage), Kraggenburg",
+      "source_url": "https://wildeweide.nl/"
+    },
+    {
+      "artist": "Jamie XX",
+      "date": "2026-07-05",
+      "venue_or_city": "Down The Rabbit Hole (als The xx), Beuningen",
+      "source_url": "https://downtherabbithole.nl/programma/the-xx"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-03-21",
+      "venue_or_city": "PAARD, Den Haag",
+      "source_url": "https://www.paard.nl/en/event/weval-2/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-03-26",
+      "venue_or_city": "013 Poppodium, Tilburg",
+      "source_url": "https://www.013.nl/en/events/117151/weval",
+      "ticketswap_url": "https://www.ticketswap.nl/concert-tickets/weval-tilburg-poppodium-013-2026-03-26-RYCFvMzRHMtNGpMYuJRuVH"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2026-06-20",
+      "venue_or_city": "Pinkpop Festival, Landgraaf",
+      "source_url": "https://www.pinkpop.nl/en/line-up/hang-youth/"
+    },
+    {
+      "artist": "Goldband",
+      "date": "2026-07-03",
+      "venue_or_city": "Wilde Weide Festival, Kraggenburg",
+      "source_url": "https://wildeweide.nl/en/program/"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2026-12-26",
+      "venue_or_city": "Paradiso, Amsterdam (Hardkoor Nachtmis)",
+      "source_url": "https://www.paradiso.nl/en/program/hang-youth-hardkoor-nachtmis/2913084"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2026-07-11 (o.b.v. tijdschema; festival loopt 9 t/m 12 juli 2026, exacte dag niet 100% officieel bevestigd)",
+      "venue_or_city": "Wildeburg Festival, Kraggenburg",
+      "source_url": "https://wildeburg.nl/en/program/"
+    },
+    {
+      "artist": "Nicolas Jaar",
+      "date": "2026-07-30",
+      "venue_or_city": "Melkweg, Amsterdam (als DARKSIDE, Dekmantel Festival 'Into the City')",
+      "source_url": "https://www.melkweg.nl/en/agenda/dekmantel-festival-darkside-headache-juan-atkins-pres-infiniti-new-york-ea-30-07-2026/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-10-02",
+      "venue_or_city": "Patronaat, Haarlem (Haarlem Vinyl Festival, met Ineffekt + Nebula)",
+      "source_url": "https://patronaat.nl/event/weval-support-haarlem-vinyl-festival-02-10-26/"
+    },
+    {
+      "artist": "Madra Salach",
+      "date": "2026-06-13",
+      "venue_or_city": "Best Kept Secret Festival, Hilvarenbeek",
+      "source_url": "https://www.bestkeptsecret.nl/bands/madra-salach"
+    },
+    {
+      "artist": "Madra Salach",
+      "date": "2026-09-19",
+      "venue_or_city": "EKKO, Utrecht",
+      "source_url": "https://ekko.nl/en/upcoming/"
+    },
+    {
+      "artist": "Madra Salach",
+      "date": "2026-08-27 to 2026-08-30 (exacte dag niet bevestigd; festival loopt 27 t/m 30 augustus 2026)",
+      "venue_or_city": "Into The Great Wide Open, Vlieland",
+      "source_url": "https://intothegreatwideopen.nl/en/programma/madra-salach"
+    },
+    {
+      "artist": "Madra Salach",
+      "date": "2026-01-15 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Nieuwe Kerk, Groningen (ESNS / Eurosonic Noorderslag 2026)",
+      "source_url": "https://esns.nl/nl/festival/artists/madra-salach/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-06-26 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Lago Lago Festival, Stroombroek, Braamt",
+      "source_url": "https://lagolago.nl/"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2026-04-27 (Dag 2/Koningsdag, Main Stage; reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Kroongetuige Festival (Hall of Fame / Spoorzone), Tilburg",
+      "source_url": "https://hall-fame.nl/programma/kroongetuige-maandag-111549927"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2026-07-25",
+      "venue_or_city": "WeitjeRock Festival, IJzendijke",
+      "source_url": "https://www.weitjerock.com/line-up/zaterdag/"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2025-10-16 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Mezz, Breda",
+      "source_url": "https://www.mezz.nl/programma/hang-youth-2/"
+    },
+    {
+      "artist": "Lisa O'Neill",
+      "date": "2026-11-03",
+      "venue_or_city": "Merleyn, Nijmegen",
+      "source_url": "https://www.doornroosje.nl/event/lisa-oneill/"
+    },
+    {
+      "artist": "Queens of the Stone Age",
+      "date": "2025-10-26 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Koninklijk Theater Carré, Amsterdam (The Catacombs Tour)",
+      "source_url": "https://carre.nl/voorstelling/queens-of-the-stone-age-the-catacombs-tour"
+    },
+    {
+      "artist": "Madra Salach",
+      "date": "2026-08-05 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Openluchttheater De Goffert, Nijmegen (support voor Black Country, New Road)",
+      "source_url": "https://www.doornroosje.nl/en/event/black-country-new-road/"
+    },
+    {
+      "artist": "Goldband",
+      "date": "2026-04-27 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Oranjebitter Festival, Roel Langerakpark, Rotterdam",
+      "source_url": "https://oranjebitter-rotterdam.nl/",
+      "ticketswap_url": "https://www.ticketswap.nl/festival-tickets/oranjebitter-festival-2026-rotterdam-roel-langerakpark-2026-04-27-CVM2xYrZa9GpvEmMDzxQb"
+    },
+    {
+      "artist": "Joan Baez",
+      "date": "2026-06-07",
+      "venue_or_city": "Koninklijk Theater Carré, Amsterdam (extra afscheidsshow, Farewell Forever Tour)",
+      "source_url": "https://www.artiestennieuws.nl/88211/joan-baez-extra-show-carre"
+    },
+    {
+      "artist": "Hang Youth",
+      "date": "2025-10-24 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Willem Twee, 's-Hertogenbosch",
+      "source_url": "https://www.willem-twee.nl/alle-activiteiten/hang-youth-111493702"
+    },
+    {
+      "artist": "Nicolas Jaar",
+      "date": "2025-11-09 (reeds geweest; retroactief gevonden; duo met Ali Sethi, Le Guess Who? festival)",
+      "venue_or_city": "TivoliVredenburg, Utrecht",
+      "source_url": "https://www.tivolivredenburg.nl/agenda/80866604/le-guess-who-sunday-09-11-2025"
+    },
+    {
+      "artist": "The Smiths",
+      "date": "2026-02-24 (reeds geweest; retroactief gevonden; Morrissey solo-optreden, geen Smiths-reünie)",
+      "venue_or_city": "De Doelen, Rotterdam",
+      "source_url": "https://www.dedoelen.nl/en/agenda/morrissey-n5z8"
+    },
+    {
+      "artist": "Goldband",
+      "date": "2026-05-05 (reeds geweest; abusievelijk als nieuw gemeld zonder datumcheck)",
+      "venue_or_city": "Bevrijdingsfestival Zuid-Holland (Erasmuspodium), Euromastpark, Rotterdam",
+      "source_url": "https://bevrijdingsfestivalzh.nl/artiest/goldband/"
+    },
+    {
+      "artist": "Oasis",
+      "date": "2027-07-16",
+      "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, support Richard Ashcroft; tickets via registratie/lotingsysteem, geen vrije verkoop)",
+      "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/"
+    },
+    {
+      "artist": "Oasis",
+      "date": "2027-07-17",
+      "venue_or_city": "Johan Cruijff ArenA, Amsterdam (Oasis Live '27, tickets via registratie/lotingsysteem, geen vrije verkoop)",
+      "source_url": "https://www.johancruijffarena.nl/en/calendar/462141-oasis/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2026-10-10",
+      "venue_or_city": "EKKO, Utrecht (Weval presents: CLUB CHOROPHOBIA, DJ-set all-nighter 23:30-04:00)",
+      "source_url": "https://ekko.nl/en/event/weval-presents-club-chorophobia/"
+    },
+    {
+      "artist": "The Smiths",
+      "date": "2026-12-28",
+      "venue_or_city": "013 Poppodium, Tilburg (Morrissey solo-optreden, geen Smiths-reünie; enige NL-show)",
+      "source_url": "https://www.013.nl/en/events/128536/morrissey"
+    },
+    {
+      "artist": "Rosalía",
+      "date": "2026-04-22 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Ziggo Dome, Amsterdam (LUX Tour 2026)",
+      "source_url": "https://ziggodome.nl/en/events/d3e80abb-1815-44ea-b0ff-76d4b0571f97/"
+    },
+    {
+      "artist": "Rosalía",
+      "date": "2026-04-23 (reeds geweest; retroactief gevonden; extra show)",
+      "venue_or_city": "Ziggo Dome, Amsterdam (LUX Tour 2026)",
+      "source_url": "https://ziggodome.nl/en/events/d3e80abb-1815-44ea-b0ff-76d4b0571f97/"
+    },
+    {
+      "artist": "Lisa O'Neill",
+      "date": "2026-11-25",
+      "venue_or_city": "TivoliVredenburg (Ronda), Utrecht (als gastzangeres bij The Pogues; venuepagina noemt Stick in the Wheel als support, Lisa O'Neill via Bandsintown/Hot Press; show uitverkocht)",
+      "source_url": "https://www.tivolivredenburg.nl/agenda/90628760/the-pogues-25-11-2026"
+    }
   ],
-  "last_run": "2026-10-05T09:30:00+02:00",
+  "last_run": "2026-10-12T10:45:00+02:00",
   "last_run_by": "WP-Fat Client"
 }
