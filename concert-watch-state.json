@@ -464,8 +464,14 @@
       "date": "2026-11-25",
       "venue_or_city": "TivoliVredenburg (Ronda), Utrecht (als gastzangeres bij The Pogues; venuepagina noemt Stick in the Wheel als support, Lisa O'Neill via Bandsintown/Hot Press; show uitverkocht)",
       "source_url": "https://www.tivolivredenburg.nl/agenda/90628760/the-pogues-25-11-2026"
+    },
+    {
+      "artist": "Mumford & Sons",
+      "date": "2025-11-17 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Ziggo Dome, Amsterdam",
+      "source_url": "https://ziggodome.nl/en/"
     }
   ],
-  "last_run": "2026-10-18T21:30:00+02:00",
-  "last_run_by": "Thinkpad_thuis"
+  "last_run": "2026-10-26T09:07:23+01:00",
+  "last_run_by": "WP-Fat Client"
 }
