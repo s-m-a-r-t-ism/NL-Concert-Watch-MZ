@@ -470,8 +470,32 @@
       "date": "2025-11-17 (reeds geweest; retroactief gevonden)",
       "venue_or_city": "Ziggo Dome, Amsterdam",
       "source_url": "https://ziggodome.nl/en/"
+    },
+    {
+      "artist": "Mumford & Sons",
+      "date": "2027-06-19",
+      "venue_or_city": "Pinkpop Festival, Landgraaf",
+      "source_url": "https://www.pinkpop.nl/en/line-up/mumford-sons/"
+    },
+    {
+      "artist": "zZz",
+      "date": "2027-01-22",
+      "venue_or_city": "Vera, Groningen (met Stuurbaard Bakkebaard; datum via festivalinfo.nl, nog niet in Vera-programma zichtbaar)",
+      "source_url": "https://www.vera-groningen.nl/programma/"
+    },
+    {
+      "artist": "zZz",
+      "date": "2027-01-23",
+      "venue_or_city": "Muziekgieterij, Maastricht (met Stuurbaard Bakkebaard)",
+      "source_url": "https://muziekgieterij.nl/#programma"
+    },
+    {
+      "artist": "zZz",
+      "date": "2027-01-29",
+      "venue_or_city": "dB's, Utrecht (met Stuurbaard Bakkebaard)",
+      "source_url": "https://dbstudio.nl/event/zzz-stuurbaard-bakkebaard/"
     }
   ],
-  "last_run": "2026-10-26T09:07:23+01:00",
-  "last_run_by": "WP-Fat Client"
+  "last_run": "2026-11-01T21:51:56+01:00",
+  "last_run_by": "Thinkpad_thuis"
 }
