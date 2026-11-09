@@ -494,8 +494,32 @@
       "date": "2027-01-29",
       "venue_or_city": "dB's, Utrecht (met Stuurbaard Bakkebaard)",
       "source_url": "https://dbstudio.nl/event/zzz-stuurbaard-bakkebaard/"
+    },
+    {
+      "artist": "Weval",
+      "date": "2027-07-02 to 2027-07-04 (exacte dag nog niet bekend; Weval is een van de vijf curatoren/eerste namen)",
+      "venue_or_city": "Wilde Weide Festival, Netl, Kraggenburg",
+      "source_url": "https://wildeweide.nl/"
+    },
+    {
+      "artist": "zZz",
+      "date": "2026-04-18 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "Café Wilhelmina, Eindhoven",
+      "source_url": "https://www.jambase.com/show/zzz-cafe-wilhelmina-20260418"
+    },
+    {
+      "artist": "zZz",
+      "date": "2026-05-09 (reeds geweest; retroactief gevonden)",
+      "venue_or_city": "PAARD, Den Haag",
+      "source_url": "https://www.paard.nl/en/event/zzz-2/"
+    },
+    {
+      "artist": "zZz",
+      "date": "2026-05-15 (reeds geweest; retroactief gevonden; met Stuurbaard Bakkebaard)",
+      "venue_or_city": "Burgerweeshuis, Deventer",
+      "source_url": "https://www.burgerweeshuis.nl/en/events/zzz-stuurbaard-bakkebaard"
     }
   ],
-  "last_run": "2026-11-01T21:51:56+01:00",
-  "last_run_by": "Thinkpad_thuis"
+  "last_run": "2026-11-09T15:55:57+01:00",
+  "last_run_by": "WP-Fat Client"
 }
