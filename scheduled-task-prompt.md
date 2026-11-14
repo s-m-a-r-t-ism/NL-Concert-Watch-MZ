@@ -7,6 +7,15 @@ Je controleert of er nieuwe concert- of festivaloptredens in Nederland zijn aang
 
 Deze routine draait op meerdere machines (werk en privé) tegen dezelfde GitHub-repo (https://github.com/s-m-a-r-t-ism/NL-Concert-Watch-MZ). Alle paden hieronder zijn expres generiek/relatief geformuleerd zodat deze instructies ONGEWIJZIGD op elke machine werken — gebruik nooit een hardcoded absoluut pad (zoals een specifieke gebruikersnaam of schijfletter) in deze routine of in updates erop.
 
+STAP 0 — Snelle voorcheck (ALTIJD als allereerste actie, in één enkele tool-aanroep, zonder eerst rond te kijken):
+Voer dit ene PowerShell-commando uit vanuit de working directory van deze taak (het werkt zowel als die map de repo-clone zelf is als wanneer de clone in een submap NL-Concert-Watch-MZ staat):
+`$d = if (Test-Path .\precheck.ps1) { '.' } else { '.\NL-Concert-Watch-MZ' }; powershell -NoProfile -ExecutionPolicy Bypass -File "$d\precheck.ps1"`
+Het script precheck.ps1 (in de repo) doet STAP 1b volledig voor je: git pull, de SKILL.md-zelf-sync, het lezen van machine-name.txt en de dubbel-werk-check. Het geeft regels terug als REPO:, PULL:, SKILL:, MACHINE: en als laatste RESULT:.
+- "RESULT: SKIP ...": stop direct. Doe niets anders (geen bestanden lezen, geen WebSearches, geen commit/push). Stuur alleen een kort berichtje als "Al deze week gecheckt op <datum> door <machine> — sla over om dubbel werk te voorkomen." plus, als SKILL: UPDATED meldt, de zin "SKILL.md was verouderd t.o.v. de repo en is bijgewerkt voor de volgende run.", en de regel "(Run door: <MACHINE>)". Dit is de volledige output van deze run.
+- "RESULT: GO ...": ga door met STAP 1 (STAP 1b is dan al gedaan, sla die over). Gebruik het REPO:-pad als de map voor alle verdere bestands- en git-acties.
+- MACHINE: MISSING: handel af zoals beschreven in STAP 1.
+- Alleen als het script zelf niet gevonden wordt of crasht: val terug op de handmatige STAP 1 en 1b hieronder.
+
 STAP 1 — Lees de trackingstate en herken deze machine:
 Lees het bestand concert-watch-state.json in de working directory van deze scheduled task (dit IS je lokale clone van bovenstaande repo — twijfel je, controleer dan met `git remote -v` dat dit s-m-a-r-t-ism/NL-Concert-Watch-MZ is). Dit bevat:
 - "artists": de lijst met artiesten om te volgen, ALFABETISCH gesorteerd — houd deze volgorde aan als je de lijst afwerkt en rapporteert, zodat de gebruiker de voortgang kan volgen
@@ -16,7 +25,7 @@ Lees het bestand concert-watch-state.json in de working directory van deze sched
 
 Lees ook %USERPROFILE%\.claude\scheduled-tasks\nl-concert-watch\machine-name.txt — dit bevat de vaste, door de gebruiker gekozen naam van DEZE machine (bijv. "WP-RDP"). Dit bestand is lokaal per machine (staat niet in de git repo), zodat elke geïnstalleerde machine zijn eigen naam heeft. Gebruik deze naam in STAP 6 en STAP 7. Als het bestand niet bestaat, vraag de gebruiker eenmalig hoe deze machine genoemd moet worden, maak het bestand aan met dat antwoord, en ga daarna verder.
 
-STAP 1b — Dubbel-werk-check en zelf-sync (BELANGRIJK, deze routine draait op meerdere machines tegen dezelfde repo):
+STAP 1b — Dubbel-werk-check en zelf-sync (BELANGRIJK, deze routine draait op meerdere machines tegen dezelfde repo; wordt normaal al door precheck.ps1 in STAP 0 gedaan — onderstaande is de handmatige fallback):
 Voordat je de zoekronde start, haal eerst de laatste stand van de repo op (git pull --rebase origin main, vanuit de working directory van deze taak) — een andere machine kan intussen al een nieuwere state gepusht hebben dan wat lokaal op schijf staat, én/of een andere machine kan de routine-instructies zelf hebben bijgewerkt.
 
 Zelf-sync: vergelijk direct na de git pull de routine-sectie van het zojuist opgehaalde scheduled-task-prompt.md (alles vanaf de frontmatter "---" tot aan de "---" vóór de installatiesectie) met je eigen lokale SKILL.md-bestand (%USERPROFILE%\.claude\scheduled-tasks\nl-concert-watch\SKILL.md, het bestand dat je nu als instructies gebruikt).
